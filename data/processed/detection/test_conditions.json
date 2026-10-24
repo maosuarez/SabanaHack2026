@@ -1,0 +1,71 @@
+{
+ "nota": "Juicio de Claude (visual), pendiente de revision del usuario. varias_rosas = >1 caja de referencia.",
+ "conditions": {
+  "10fa50389a652d6adb6a6bd5def526ce": {
+   "contraluz": 1,
+   "pequenas": 1,
+   "oclusion": 0,
+   "varias_rosas": 1
+  },
+  "380c32671e1a29305a545879baaa981e": {
+   "contraluz": 1,
+   "pequenas": 1,
+   "oclusion": 0,
+   "varias_rosas": 1
+  },
+  "4a9d83db6aa4f8b5d056ee5ab06cb984": {
+   "contraluz": 1,
+   "pequenas": 0,
+   "oclusion": 1,
+   "varias_rosas": 0
+  },
+  "6b50d559184228c95a3454a359ba7f82": {
+   "contraluz": 1,
+   "pequenas": 1,
+   "oclusion": 1,
+   "varias_rosas": 1
+  },
+  "794fecf06876684b15c94e058f67160b": {
+   "contraluz": 1,
+   "pequenas": 0,
+   "oclusion": 1,
+   "varias_rosas": 0
+  },
+  "83c44195f82a24ef1217fdbeb888bea8": {
+   "contraluz": 0,
+   "pequenas": 0,
+   "oclusion": 0,
+   "varias_rosas": 0
+  },
+  "8a3242ed3213a802bc84d090bb8f6779": {
+   "contraluz": 1,
+   "pequenas": 1,
+   "oclusion": 0,
+   "varias_rosas": 1
+  },
+  "99e80d6c24bd59b2a668c2fa6c9b4654": {
+   "contraluz": 0,
+   "pequenas": 1,
+   "oclusion": 1,
+   "varias_rosas": 0
+  },
+  "c7021add9ffa15f7bf90f42bc2475af3": {
+   "contraluz": 1,
+   "pequenas": 0,
+   "oclusion": 0,
+   "varias_rosas": 0
+  },
+  "e0be4e1b32cb7a8229a2d3666e39f0c3": {
+   "contraluz": 1,
+   "pequenas": 1,
+   "oclusion": 0,
+   "varias_rosas": 1
+  },
+  "e5d6a544ad1a583609da6f2c23c88d58": {
+   "contraluz": 0,
+   "pequenas": 0,
+   "oclusion": 1,
+   "varias_rosas": 0
+  }
+ }
+}

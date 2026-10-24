@@ -1,0 +1,14 @@
+{
+ "owlv2": {
+  "threshold": 0.08189036697149277,
+  "criterion": "max F1 @IoU0.5 sobre imagenes de train",
+  "train_f1": 0.46647230320699706,
+  "n_train_images": 45
+ },
+ "gdino": {
+  "threshold": 0.13228346407413483,
+  "criterion": "max F1 @IoU0.5 sobre imagenes de train",
+  "train_f1": 0.6390977443609023,
+  "n_train_images": 45
+ }
+}

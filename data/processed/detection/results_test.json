@@ -1,0 +1,122 @@
+{
+ "owlv2": {
+  "by_condition_test": {
+   "todas": {
+    "images": 11,
+    "gt": 24,
+    "tp": 12,
+    "fp": 11,
+    "recall": 0.5,
+    "fp_per_image": 1.0,
+    "ap": 0.4867873297258369
+   },
+   "contraluz": {
+    "images": 8,
+    "gt": 21,
+    "tp": 10,
+    "fp": 7,
+    "recall": 0.47619047619047616,
+    "fp_per_image": 0.875,
+    "ap": 0.49808084222539806
+   },
+   "pequenas": {
+    "images": 6,
+    "gt": 19,
+    "tp": 7,
+    "fp": 6,
+    "recall": 0.3684210526315789,
+    "fp_per_image": 1.0,
+    "ap": 0.40432199155407655
+   },
+   "oclusion": {
+    "images": 5,
+    "gt": 6,
+    "tp": 4,
+    "fp": 4,
+    "recall": 0.6666666666666666,
+    "fp_per_image": 0.8,
+    "ap": 0.7368287740628165
+   },
+   "varias_rosas": {
+    "images": 5,
+    "gt": 18,
+    "tp": 7,
+    "fp": 5,
+    "recall": 0.3888888888888889,
+    "fp_per_image": 1.0,
+    "ap": 0.43330840415213057
+   }
+  },
+  "train": {
+   "images": 45,
+   "gt": 154,
+   "tp": 80,
+   "fp": 109,
+   "recall": 0.5194805194805194,
+   "fp_per_image": 2.422222222222222,
+   "ap": 0.3665586330376859
+  },
+  "ms_per_image_mean": 7848.675351909068,
+  "ms_per_image_median": 8152.942181000981
+ },
+ "gdino": {
+  "by_condition_test": {
+   "todas": {
+    "images": 11,
+    "gt": 24,
+    "tp": 15,
+    "fp": 6,
+    "recall": 0.625,
+    "fp_per_image": 0.5454545454545454,
+    "ap": 0.7107263186887262
+   },
+   "contraluz": {
+    "images": 8,
+    "gt": 21,
+    "tp": 12,
+    "fp": 2,
+    "recall": 0.5714285714285714,
+    "fp_per_image": 0.25,
+    "ap": 0.7161795184349158
+   },
+   "pequenas": {
+    "images": 6,
+    "gt": 19,
+    "tp": 10,
+    "fp": 2,
+    "recall": 0.5263157894736842,
+    "fp_per_image": 0.3333333333333333,
+    "ap": 0.6646106616849223
+   },
+   "oclusion": {
+    "images": 5,
+    "gt": 6,
+    "tp": 6,
+    "fp": 6,
+    "recall": 1.0,
+    "fp_per_image": 1.2,
+    "ap": 0.8888888888888888
+   },
+   "varias_rosas": {
+    "images": 5,
+    "gt": 18,
+    "tp": 9,
+    "fp": 0,
+    "recall": 0.5,
+    "fp_per_image": 0.0,
+    "ap": 0.6984278112954584
+   }
+  },
+  "train": {
+   "images": 45,
+   "gt": 154,
+   "tp": 85,
+   "fp": 27,
+   "recall": 0.551948051948052,
+   "fp_per_image": 0.6,
+   "ap": 0.6039388130559606
+  },
+  "ms_per_image_mean": 5949.314499363853,
+  "ms_per_image_median": 5268.2432159999735
+ }
+}
