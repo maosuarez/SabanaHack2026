@@ -20,10 +20,96 @@
   #st{color:#ffd400;font-weight:700}
   #info{position:fixed;left:12px;bottom:10px;z-index:2;pointer-events:none;font:600 13px/1.4 ui-monospace,Consolas,monospace;background:#0a1024c8;padding:6px 10px;border-radius:8px;max-width:calc(100vw - 48px)}
   #phase{position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:2;pointer-events:none;font:700 17px system-ui;background:#0a1024d8;border:2px solid #ffd400;padding:8px 14px;border-radius:10px;display:none;max-width:calc(100vw - 48px);text-align:center}
+  /* ===== Inicio rápido: capa encima de #ov; solo llama a la ruta de inicio existente ===== */
+  #qs{position:fixed;inset:0;z-index:10;display:flex;padding:16px;box-sizing:border-box;background:#0a1024;overflow:auto}
+  #qs[hidden],#qs [hidden]{display:none!important}
+  #qs .card{width:min(600px,100%);margin:auto;text-align:center}
+  #qs h1{margin:0 0 4px;font-size:clamp(24px,5vw,32px);color:#ffd400}
+  #qs .sub{margin:0 0 18px;font-size:16px;color:#cfd8ff}
+  #qs .btns{display:flex;flex-direction:column;gap:12px}
+  #qs button{font:700 20px system-ui,sans-serif;padding:14px 18px;min-height:56px;border:3px solid #fff;border-radius:14px;background:#f4f4f4;color:#0a1024;cursor:pointer;width:100%}
+  #qs button.vr{background:#2fe07a}
+  #qs button.pc{background:#7ab8ff}
+  #qs button:disabled{opacity:.55;cursor:default}
+  #qs button:focus-visible{outline:4px solid #ffd400;outline-offset:2px}
+  #qs .hint{height:250px;overflow:hidden;margin-top:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:15px;color:#cfd8ff}
+  #qs .hint > div{display:none;flex-direction:column;align-items:center;gap:6px;width:100%}
+  #qs .hint.vr .h-vr,#qs .hint.pc .h-pc,#qs .hint.none .h-none{display:flex}
+  #qs b{color:#ffd400}
+  #qs svg{width:auto;height:140px}
+  @keyframes qsPulse{0%,100%{fill:#ffd400;transform:scale(1)}50%{fill:#ff7a00;transform:scale(1.18)}}
+  @keyframes qsKey{0%,70%,100%{transform:translateY(0);background:#f4f4f4}10%,25%{transform:translateY(3px);background:#ffd400}}
+  @keyframes qsBob{0%,100%{transform:translate(-50%,-100%)}50%{transform:translate(-50%,calc(-100% - 6px))}}
+  #qs .pulse{animation:qsPulse .9s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+  #qs .kbd{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+  #qs .k{display:inline-block;min-width:34px;padding:6px 8px;border-radius:7px;background:#f4f4f4;color:#0a1024;font:800 16px ui-monospace,Consolas,monospace;box-shadow:0 3px 0 #8a93b3;animation:qsKey 2.4s infinite}
+  #qs .k.w{min-width:110px}
+  #qs .k:nth-child(2){animation-delay:.3s}#qs .k:nth-child(3){animation-delay:.6s}#qs .k:nth-child(4){animation-delay:.9s}
+  /* Tutorial: un solo canvas 3D que se mueve entre la ayuda del botón VR y el tutorial */
+  #qsStage{position:relative;width:100%;height:100%;min-height:160px}
+  #qsStage canvas{display:block;width:100%;height:100%}
+  #qsLbl{position:absolute;left:0;top:0;transform:translate(-50%,-100%);pointer-events:none;white-space:nowrap;font:800 15px system-ui;color:#0a1024;background:#ffd400;border-radius:8px;padding:4px 9px;animation:qsBob 1s ease-in-out infinite}
+  #qsLbl::after{content:"";position:absolute;left:50%;bottom:-8px;margin-left:-8px;border:8px solid transparent;border-bottom:0;border-top-color:#ffd400}
+  #qs .h-vr .slot{width:100%;height:190px}
+  #qs .tut .row{display:flex;gap:12px;align-items:stretch;margin:10px 0}
+  #qs .tut .slot{flex:1 1 auto;height:280px;min-width:0;background:#141b38;border-radius:14px}
+  #qs .tut .pcbox{flex:0 0 150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#141b38;border-radius:14px;padding:10px;font-size:14px;color:#cfd8ff}
+  #qs .tut .step{font:700 14px system-ui;color:#9aa6d0;margin:0}
+  #qs .tut .desc{margin:4px 0 12px;font-size:17px;color:#fff;min-height:1.4em}
+  #qs .tut .nav{display:flex;gap:10px;align-items:center}
+  #qs .tut .nav button{flex:0 0 64px}
+  #qs .dots{flex:1;display:flex;gap:8px;justify-content:center}
+  #qs .dots i{width:12px;height:12px;border-radius:50%;background:#3a4570}
+  #qs .dots i.on{background:#ffd400}
+  @media (max-width:520px){#qs .tut .row{flex-direction:column}#qs .tut .slot{height:240px}#qs .tut .pcbox{flex:0 0 auto;flex-direction:row;flex-wrap:wrap}}
+  @media (prefers-reduced-motion:reduce){#qs .pulse,#qs .k,#qsLbl{animation:none}}
 </style>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
 </head>
 <body>
+<div id="qs" role="dialog" aria-label="Inicio rápido">
+  <div class="card" id="qsMain">
+    <h1>Cama de rosas XR</h1>
+    <p class="sub">Elige cómo quieres entrar.</p>
+    <div class="btns">
+      <button id="qsVR" class="vr" data-hint="vr" disabled>Cargando…</button>
+      <button id="qsPC" class="pc" data-hint="pc">Iniciar en computador</button>
+      <button id="qsHelp">Instrucciones</button>
+    </div>
+    <div class="hint none" id="qsHint" aria-live="polite">
+      <div class="h-none">Pasa el cursor por un botón para ver qué presionar.</div>
+      <div class="h-vr">
+        <div class="slot" id="qsHintSlot">
+          <svg viewBox="0 0 120 150" aria-hidden="true">
+            <path d="M60 8c-28 0-48 18-48 42 0 18 10 30 22 36l6 54c1 6 5 9 10 9h20c5 0 9-3 10-9l6-54c12-6 22-18 22-36 0-24-20-42-48-42z" fill="#2a3150" stroke="#cfd8ff" stroke-width="3"/>
+            <path class="pulse" d="M44 6q16-10 32 0l-4 8q-12-6-24 0z" fill="#ffd400"/>
+            <circle cx="42" cy="46" r="11" fill="#11162b" stroke="#cfd8ff" stroke-width="2"/>
+            <circle cx="78" cy="56" r="8" fill="#11162b" stroke="#cfd8ff" stroke-width="2"/><text x="78" y="60" font-size="10" fill="#cfd8ff" text-anchor="middle">A</text>
+            <circle cx="84" cy="36" r="7" fill="#11162b" stroke="#cfd8ff" stroke-width="2"/><text x="84" y="40" font-size="9" fill="#cfd8ff" text-anchor="middle">B</text>
+          </svg>
+        </div>
+        <span>Apunta el rayo al botón y pulsa el <b>GATILLO</b>.</span>
+      </div>
+      <div class="h-pc">
+        <div class="kbd"><span class="k">W</span><span class="k">A</span><span class="k">S</span><span class="k">D</span></div>
+        <div class="kbd"><span class="k">Clic</span><span class="k w">Espacio</span></div>
+        <span><b>WASD</b> camina · <b>arrastrar</b> mira · <b>clic</b> o <b>Espacio</b> elige.</span>
+      </div>
+    </div>
+  </div>
+  <div class="card tut" id="qsHelpBox" hidden>
+    <p class="step" id="tutN">Paso 1 de 5</p>
+    <h1 id="tutT">Elige con el gatillo</h1>
+    <div class="row">
+      <div class="slot" id="tutSlot"></div>
+      <div class="pcbox"><span>En computador</span><div class="kbd" id="tutKeys"></div></div>
+    </div>
+    <p class="desc" id="tutD"></p>
+    <div class="nav"><button id="tutPrev" aria-label="Paso anterior">◀</button><div class="dots" id="tutDots"></div><button id="tutNext" aria-label="Paso siguiente">▶</button></div>
+    <div class="btns" style="margin-top:12px"><button id="qsBack">Volver</button></div>
+  </div>
+  <div id="qsStage" hidden><div id="qsLbl"></div></div>
+</div>
 <div id="ov">
   <h1>Cama de rosas Freedom XR</h1>
   <p>Estás en el camino de un invernadero de rosas. Mira hacia arriba: los botones están entre 1,9 y 2,6 m, por encima de tu cabeza. En Entrenar eliges un botón y decides si se corta.</p>
@@ -2030,7 +2116,7 @@ document.getElementById('bHide').onclick = () => { ov.style.display = 'none'; };
 bAuto.onclick = () => tryEnter(['immersive-vr', 'immersive-ar']);
 const seedIn = document.getElementById('seed'); seedIn.value = DATA.seed;
 document.getElementById('bSeed').onclick = () => { const u = new URL(location.href); u.searchParams.set('seed', (+seedIn.value | 0) || 1); location.href = u.href; };
-(async () => {
+const xrCheck = (async () => {
   if (!navigator.xr) { stEl.textContent = 'Sin WebXR (¿HTTPS?). Modo escritorio activo.'; [bAR, bVR, bAuto].forEach(b => b.disabled = true); return; }
   const ar = await navigator.xr.isSessionSupported('immersive-ar').catch(() => false);
   const vr = await navigator.xr.isSessionSupported('immersive-vr').catch(() => false);
@@ -2047,6 +2133,7 @@ if (qs.get('ov') === '0') ov.style.display = 'none';
 if (qs.get('train') === '1') startTrain();
 if (qs.get('stats') === '1') setTimeout(() => console.log('STATS ' + JSON.stringify({ ...renderer.info.render, geometries: renderer.info.memory.geometries, buds: buds.length, dets: dets.length })), 4000);
 window.__game = { S, DATA, buds, bins, dets, layout, press, selectBud, decide, startTrain, exportCapture, camera, mouse, renderer, scene };
+Object.assign(window.__game, { tryEnter, xrCheck });   // inicio rápido (#qs): misma ruta de sesión que bAuto
 Object.assign(window.__game, { budReady, estado3, signalCol, ESTADO_COL, tablero: () => buttons.map(b => b.id + ':' + b.label), tarjetaBotones: () => cutCardMesh.visible ? cutBtns.map(b => b.id) : [] });
 Object.assign(window.__game, { pistasDebug: () => ({ xrFrames: xrFrames.count, callout: callout.visible, hintRing: hintRing.visible, fbRing: fbRing.visible, icono: iconMesh.visible,
   carros: (basket.visible ? 1 : 0) + (infra.visible && infra.userData.carroEstatico.visible ? 1 : 0), carroEstaticoZ: (() => { const m = new THREE.Matrix4(); infra.userData.carroEstatico.getMatrixAt(0, m); return m.elements[14]; })() }) });
@@ -2055,6 +2142,133 @@ Object.assign(window.__game, { CUT, cutPress, cutDo, cutFinish, cutLog, cutState
     panelAbajo: uiGroup.localToWorld(V3(0, -PM_H / 2, 0)).toArray(), tarjetaAbajo: cutCardMesh.localToWorld(V3(0, -CM_H / 2, 0)).toArray(),
     panelAncho: PM_W * uiGroup.scale.x, carro: basket.position.toArray(), carroVisible: basket.visible, varasEnCaja: cutPieces.filter(p => p.parent === basket).length,
     vara0: cutPieces[0] ? cutPieces[0].getWorldPosition(V3(0, 0, 0)).toArray() : null }) });
+</script>
+<script type="module">
+/* ===== Inicio rápido (#qs) y tutorial 3D de controles =====
+   No cambia la lógica del juego: entra a XR con window.__game.tryEnter (la misma ruta que bAuto), sin pasos async entre el clic y requestSession. */
+import * as THREE from 'three';
+import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
+const $ = id => document.getElementById(id), G = window.__game;
+const qs = $('qs'), main = $('qsMain'), help = $('qsHelpBox'), hint = $('qsHint'), vrBtn = $('qsVR');
+const setHint = h => { hint.className = 'hint ' + h; setMode(h === 'vr' ? 'hint' : help.hidden ? null : 'tut'); };
+const showQs = () => { qs.hidden = false; help.hidden = true; main.hidden = false; setHint('none'); };
+if (new URLSearchParams(location.search).get('ov') === '0') qs.hidden = true;   // capturas y pruebas: sin capa
+G.renderer.xr.addEventListener('sessionend', showQs);   // al terminar la sesión VR/AR (Salir del tablero o salir desde el menú del sistema) vuelve la capa
+G.xrCheck.then(() => { const ok = !$('bAuto').disabled; vrBtn.disabled = !ok; vrBtn.textContent = ok ? 'Iniciar en VR' : 'VR no disponible aquí'; });
+vrBtn.onclick = () => { G.tryEnter(['immersive-vr', 'immersive-ar']); qs.hidden = true; setMode(null); };   // requestSession se llama en este mismo tick
+$('qsPC').onclick = () => { qs.hidden = true; setMode(null); $('bHide').click(); };
+$('qsHelp').onclick = () => { main.hidden = true; help.hidden = false; go(0); setMode('tut'); $('qsBack').focus({ preventScroll: true }); qs.scrollTop = 0; };
+$('qsBack').onclick = () => { help.hidden = true; main.hidden = false; setMode(null); $('qsHelp').focus(); };
+for (const b of [vrBtn, $('qsPC')]) {
+  for (const ev of ['mouseenter', 'focus']) b.addEventListener(ev, () => setHint(b.dataset.hint));
+  for (const ev of ['mouseleave', 'blur']) b.addEventListener(ev, () => setHint('none'));
+}
+
+/* Pasos: solo acciones que existen en el código (selectstart/squeezestart, cutXR con buttons[0]/[1], locomoción con axes[3]) */
+const pulse = t => .5 - .5 * Math.cos(t * 4.2), hold = t => Math.min(1, (t % 2.6) * 3) * ((t % 2.6) < 2 ? 1 : 0);
+const STEPS = [
+  { t: 'Elige con el gatillo', d: 'Apunta el rayo a un botón (rosa o tablero) y pulsa.', hand: 'right', hl: 'xr_standard_trigger', lbl: 'Gatillo derecho', a: t => ({ trigger: pulse(t) }), keys: ['Clic', 'Espacio'] },
+  { t: 'Toma las tijeras', d: 'Mano derecha: mantén apretado el grip.', hand: 'right', hl: 'xr_standard_squeeze', lbl: 'Grip: mantén', a: t => ({ squeeze: hold(t) }), keys: ['X'], note: 'X corta directo' },
+  { t: 'Corta con el gatillo', d: 'Con el grip apretado, pulsa el gatillo sobre el tallo.', hand: 'right', hl: 'xr_standard_trigger', lbl: 'Gatillo', a: t => ({ squeeze: 1, trigger: pulse(t) }), keys: ['X'] },
+  { t: 'Deja el tallo', d: 'Toma el tallo con el grip y suéltalo sobre la caja azul.', hand: 'right', hl: 'xr_standard_squeeze', lbl: 'Grip: toma y suelta', a: t => ({ squeeze: pulse(t * .5) }), keys: ['B'] },
+  { t: 'Camina con el joystick', d: 'Empuja el joystick adelante o atrás (sirve cualquiera).', hand: 'left', hl: 'xr_standard_thumbstick', lbl: 'Joystick izquierdo ↑ ↓', a: t => ({ y: Math.sin(t * 2.4) }), keys: ['W', 'A', 'S', 'D'] }
+];
+const RESP = { trigger: 'xr_standard_trigger_pressed', squeeze: 'xr_standard_squeeze_pressed', y: 'xr_standard_thumbstick_yaxis_pressed' };
+// Pose de cada control según la pieza a mostrar (Euler XYZ, radianes); la cámara mira hacia -Z
+const POSE = {
+  xr_standard_trigger: [-.6, -.9, 0],    // desde abajo y al frente: se ve el gatillo bajo el aro
+  xr_standard_squeeze: [.6, 1.2, 0],     // cara interna del mango: se ve el grip
+  xr_standard_thumbstick: [1.2, 0, 0],   // cara superior: joystick y botones
+  rest: [1.2, 0, 0]
+};
+let step = 0, stepT = 0, mode = null, raf = 0, ready = false;
+const dotsEl = $('tutDots'); dotsEl.innerHTML = STEPS.map(() => '<i></i>').join('');
+function go(i) {
+  step = (i + STEPS.length) % STEPS.length; stepT = 0;
+  const s = STEPS[step];
+  $('tutN').textContent = `Paso ${step + 1} de ${STEPS.length}`; $('tutT').textContent = s.t; $('tutD').textContent = s.d;
+  $('tutKeys').innerHTML = s.keys.map(k => `<span class="k${k.length > 4 ? ' w' : ''}">${k}</span>`).join('') + (s.note ? `<small style="width:100%">${s.note}</small>` : '');
+  [...dotsEl.children].forEach((d, j) => d.className = j === step ? 'on' : '');
+}
+$('tutPrev').onclick = () => go(step - 1); $('tutNext').onclick = () => go(step + 1);
+go(0);
+
+/* Un solo renderer; el canvas se mueve entre la ayuda del botón VR y el tutorial, y solo dibuja si está visible */
+const stage = $('qsStage'), lbl = $('qsLbl');
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); stage.prepend(renderer.domElement);
+const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(30, 1, .01, 5);
+camera.position.set(0, 0, .4);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x445066, 2.4));
+const sun = new THREE.DirectionalLight(0xffffff, 2.2); sun.position.set(.5, 1, 1.5); scene.add(sun);
+const ctl = {};
+function setMode(m) {
+  mode = ready ? m : null;
+  if (!mode) { stage.hidden = true; return; }
+  (mode === 'tut' ? $('tutSlot') : $('qsHintSlot')).appendChild(stage); stage.hidden = false;
+  if (!raf) raf = requestAnimationFrame(frame);
+}
+const _q = new THREE.Quaternion(), _e = new THREE.Euler(), _b = new THREE.Box3(), _p = new THREE.Vector3();
+let last = 0;
+function frame(now) {
+  raf = 0; if (!mode || qs.hidden) return;
+  raf = requestAnimationFrame(frame);
+  const dt = Math.min(1, (now - (last || now)) / 1000); last = now;
+  stepT += dt; if (mode === 'tut' && stepT > 5) go(step + 1);   // ciclo automático cada 5 s
+  const s = mode === 'tut' ? STEPS[step] : STEPS[0], t = stepT;
+  const w = stage.clientWidth, h = stage.clientHeight;
+  if (w && h && (renderer.domElement.width !== Math.round(w * renderer.getPixelRatio()) || renderer.domElement.height !== Math.round(h * renderer.getPixelRatio()))) {
+    renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  const val = s.a(t), glow = .55 + .45 * Math.sin(now / 160);
+  for (const hand of ['left', 'right']) {
+    const c = ctl[hand], on = hand === s.hand;
+    const pose = on ? POSE[s.hl] : POSE.rest;
+    _q.setFromEuler(_e.set(pose[0], (hand === 'left' ? -1 : 1) * pose[1], (hand === 'left' ? -1 : 1) * pose[2]));   // el izquierdo, en espejo
+    if (on) _q.multiply(new THREE.Quaternion().setFromEuler(_e.set(0, Math.sin(now / 900) * .12, 0)));
+    c.pivot.quaternion.slerp(_q, 1 - Math.exp(-dt * 5));
+    c.pivot.scale.setScalar(THREE.MathUtils.lerp(c.pivot.scale.x, on ? 1.2 : .85, 1 - Math.exp(-dt * 5)));
+    c.pivot.position.lerp(_p.set((hand === 'left' ? -1 : 1) * (on ? .05 : .1), 0, on ? 0 : -.1), 1 - Math.exp(-dt * 5));
+    for (const [k, r] of Object.entries(c.resp)) { r.v.quaternion.copy(r.mn.quaternion); r.v.position.copy(r.mn.position); }
+    for (const [k, v] of Object.entries(on ? val : {})) {
+      const r = c.resp[RESP[k]]; if (!r) continue;
+      const x = k === 'y' ? (1 - v) / 2 : v;   // eje Y: -1 adelante
+      r.v.quaternion.slerpQuaternions(r.mn.quaternion, r.mx.quaternion, x); r.v.position.lerpVectors(r.mn.position, r.mx.position, x);
+    }
+    if (c.resp[RESP.y] && !(on && 'y' in val)) { const r = c.resp[RESP.y]; r.v.quaternion.slerpQuaternions(r.mn.quaternion, r.mx.quaternion, .5); r.v.position.lerpVectors(r.mn.position, r.mx.position, .5); }
+    const rx = c.resp['xr_standard_thumbstick_xaxis_pressed']; if (rx) { rx.v.quaternion.slerpQuaternions(rx.mn.quaternion, rx.mx.quaternion, .5); rx.v.position.lerpVectors(rx.mn.position, rx.mx.position, .5); }
+    for (const [name, cp] of Object.entries(c.comp)) for (const m of cp.mats) m.emissive.setRGB(...(on && name === s.hl ? [glow * 1.6, glow, 0] : [0, 0, 0]));
+  }
+  renderer.render(scene, camera);
+  const hc = ctl[s.hand].comp[s.hl];   // etiqueta con flecha sobre la pieza
+  if (hc) {
+    _b.setFromObject(hc.node); _b.getCenter(_p); _p.y = _b.max.y; _p.project(camera);
+    lbl.style.left = ((_p.x + 1) / 2 * w) + 'px'; lbl.style.top = ((1 - _p.y) / 2 * h - 4) + 'px'; lbl.textContent = s.lbl;
+  }
+}
+(async () => {
+  try {
+    const loader = new GLTFLoader(), prof = await (await fetch('assets/controllers/profile.json')).json();
+    for (const hand of ['left', 'right']) {
+      const root = (await loader.loadAsync(`assets/controllers/${hand}.glb`)).scene, lay = prof.layouts[hand];
+      const resp = {}, comp = {};
+      for (const cmp of Object.values(lay.components)) {
+        for (const [k, r] of Object.entries(cmp.visualResponses)) {
+          const v = root.getObjectByName(r.valueNodeName), mn = root.getObjectByName(r.minNodeName), mx = root.getObjectByName(r.maxNodeName);
+          if (v && mn && mx) resp[k] = { v, mn, mx };
+        }
+        const r0 = resp[Object.keys(cmp.visualResponses)[0]], n = r0 && r0.v, mats = [];   // la malla de cada pieza cuelga de su nodo *_pressed_value
+        if (n) { n.traverse(o => { if (o.isMesh) { o.material = o.material.clone(); mats.push(o.material); } }); comp[cmp.rootNodeName] = { node: n, mats }; }
+      }
+      root.position.sub(new THREE.Box3().setFromObject(root).getCenter(new THREE.Vector3()));
+      const pivot = new THREE.Group(); pivot.add(root); scene.add(pivot);
+      ctl[hand] = { pivot, root, resp, comp };
+    }
+    ready = true; $('qsHintSlot').querySelector('svg')?.remove();   // el SVG queda solo como respaldo si el GLB no carga
+    window.__qsTut = { ctl, POSE, go, camera, scene, renderer, get step() { return step; } };
+    if (!help.hidden) setMode('tut'); else if (hint.classList.contains('vr')) setMode('hint');
+  } catch (e) { console.warn('Tutorial 3D sin modelo:', e); $('tutSlot').textContent = 'No se pudo cargar el modelo 3D de los controles.'; }
+})();
 </script>
 </body>
 </html>
