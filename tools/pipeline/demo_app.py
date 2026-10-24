@@ -27,6 +27,7 @@ MAX_SIDE = 1600
 EXAMPLES = {n: ROOT / "data/raw/images" / f"{n}.jpeg" for n in ("rosa_18", "rosa_37", "rosa_61")}
 EXAMPLES = {k: v for k, v in EXAMPLES.items() if v.exists()}
 LABELS = {"rosa_18": "Finca (test)", "rosa_37": "Finca (test)", "rosa_61": "Finca (test)"}
+EXPL_PATH = ROOT / "data/processed/pipeline/explanations_kimi.json"
 LOCK = threading.Lock()
 PIPE: Pipeline | None = None
 
@@ -39,7 +40,18 @@ def thumb(path: Path) -> bytes:
     return b.getvalue()
 
 
-def analyze(img: Image.Image) -> dict:
+def load_expl(name: str | None) -> dict:
+    """Explicaciones precalculadas (Kimi). Solo galería; sin JSON o sin nombre -> {} (la app sigue igual)."""
+    if not name:
+        return {}
+    try:
+        d = json.loads(EXPL_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+    return {v["n"]: v for v in d.values() if v.get("imagen") == name and v.get("ok")}
+
+
+def analyze(img: Image.Image, name: str | None = None) -> dict:
     img = ImageOps.exif_transpose(img).convert("RGB")
     img.thumbnail((MAX_SIDE, MAX_SIDE))
     with LOCK:
@@ -47,12 +59,15 @@ def analyze(img: Image.Image) -> dict:
     b = io.BytesIO()
     annotate(img, fl).save(b, "JPEG", quality=88)
     cnt = {k: sum(f["veredicto_clave"] == k for f in fl) for k in COLORS}
+    ex = load_expl(name)
     rows = [{"n": f["id"] + 1, "etapa": f["etapa"], "confianza": f["confianza"], "veredicto": f["veredicto"],
              "clave": f["veredicto_clave"], "motivo": f["motivo"], "probabilidades": f["probabilidades"],
-             "score_detector": f["score_detector"]} for f in fl]
+             "score_detector": f["score_detector"],
+             "explicacion": (ex[f["id"] + 1]["explicacion"] if ex.get(f["id"] + 1, {}).get("coherente") is True
+                             and ex[f["id"] + 1].get("etapa_local") == f["etapa"] else None)} for f in fl]
     return {"imagen": "data:image/jpeg;base64," + base64.b64encode(b.getvalue()).decode(),
             "resumen": {"aptas": cnt["apto"], "no_aptas": cnt["no_apto"], "zona_gris": cnt["gris"], "total": len(fl)},
-            "flores": rows, "tiempo_ms": round(t["total_ms"]), "tamano": list(img.size)}
+            "flores": rows, "es_ejemplo": bool(name), "tiempo_ms": round(t["total_ms"]), "tamano": list(img.size)}
 
 
 class H(BaseHTTPRequestHandler):
@@ -82,12 +97,13 @@ class H(BaseHTTPRequestHandler):
         p = urlparse(self.path).path
         try:
             if p.startswith("/analyze/") and p[9:] in EXAMPLES:
-                img = Image.open(EXAMPLES[p[9:]])
+                img, name = Image.open(EXAMPLES[p[9:]]), p[9:]
             elif p == "/analyze":
+                name = None
                 img = Image.open(io.BytesIO(self.rfile.read(int(self.headers.get("Content-Length", 0)))))
             else:
                 return self._send(404, b"{}", "application/json")
-            self._send(200, json.dumps(analyze(img), ensure_ascii=False).encode(), "application/json")
+            self._send(200, json.dumps(analyze(img, name), ensure_ascii=False).encode(), "application/json")
         except Exception as e:  # imagen inválida, etc.
             self._send(400, json.dumps({"error": f"No se pudo procesar la imagen: {e}"}).encode(), "application/json")
 
@@ -134,7 +150,7 @@ async function run(p,body){$('err').textContent='';$('load').style.display='flex
  catch(e){$('err').textContent=e.message}finally{$('load').style.display='none';$('out').style.opacity=1}}
 function show(d){const s=d.resumen;let h=`<div class="sum"><div class="pill p-ok">${s.aptas}<small>aptas</small></div><div class="pill p-no">${s.no_aptas}<small>no aptas</small></div><div class="pill p-gr">${s.zona_gris}<small>en zona gris</small></div></div>
 <img src="${d.imagen}" alt="Imagen anotada"><p class="mut">${s.total} flores detectadas en ${(d.tiempo_ms/1000).toFixed(1)} s</p>`;
- if(d.flores.length){h+='<table><tr><th>#</th><th>Etapa</th><th>Confianza</th><th>Veredicto</th><th>Motivo</th></tr>'+d.flores.map(f=>`<tr><td>${f.n}</td><td>${f.etapa}</td><td>${(f.confianza*100).toFixed(0)}%</td><td><span class="tag t-${f.clave}">${f.veredicto}</span></td><td>${f.motivo}</td></tr>`).join('')+'</table>'}
+ if(d.flores.length){h+='<table><tr><th>#</th><th>Etapa</th><th>Confianza</th><th>Veredicto</th><th>Motivo</th><th>Explicación (Kimi, generada previamente)</th></tr>'+d.flores.map(f=>`<tr><td>${f.n}</td><td>${f.etapa}</td><td>${(f.confianza*100).toFixed(0)}%</td><td><span class="tag t-${f.clave}">${f.veredicto}</span></td><td>${f.motivo}</td><td class="mut">${f.explicacion||'sin explicación'}</td></tr>`).join('')+'</table>'+(d.es_ejemplo?'<p class="mut">Las explicaciones las generó Kimi (IA) antes de la demo y no están verificadas por un experto. Describen, no deciden: la etapa y el veredicto son del clasificador local.</p>':'<p class="mut">Explicación de Kimi: solo en ejemplos de la galería (no se llama a internet con imágenes subidas o de webcam).</p>')}
  else h+='<p>No se detectaron flores.</p>';$('out').innerHTML=h}
 $('file').onchange=e=>{const f=e.target.files[0];if(f)run('/analyze',f);e.target.value=''};
 $('btnCam').onclick=async()=>{try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}});$('vid').srcObject=stream;$('cam').style.display='block'}catch(e){$('err').textContent='No se pudo abrir la camara: '+e.message}};
