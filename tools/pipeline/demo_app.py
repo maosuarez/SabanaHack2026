@@ -93,7 +93,7 @@ def kimi_view(job: dict) -> dict:
             if k and _sa(k["etapa"]) != _sa(r["etapa"]):
                 disc += 1
             fl.append({"n": r["n"], "etapa_kimi": k["etapa"] if k else None, "duda": k["duda"] if k else None,
-                       "confianza_kimi": k["confianza"] if k else None, "explicacion": k["explicacion"] if k else None,
+                       "confianza_kimi": k["confianza"] if k else None, "explicacion": vlm_stage.limpiar_explicacion(k["explicacion"]) if k else None,
                        "aviso": aviso_kimi(r["etapa"], k)})
         v["flores"] = fl
         v["discrepan"] = disc
@@ -130,7 +130,7 @@ def submit_kimi(jid: str, rows: list[dict], items: list[dict], name: str | None)
         job = {"estado": "queued", "rows": rows, "items": items}
         ex = load_expl(name)
         if ex:  # texto de respaldo (generado con la etapa local conocida), solo si Kimi falla
-            job["respaldo"] = {n: e["explicacion"] for n, e in ex.items() if e.get("etapa_local") == next(
+            job["respaldo"] = {n: vlm_stage.limpiar_explicacion(e["explicacion"]) for n, e in ex.items() if e.get("etapa_local") == next(
                 (r["etapa"] for r in rows if r["n"] == n), None) and e.get("coherente") is True}
         if not rows:
             job.update(estado="done", fuente="sin flores", items=None, resultado={})
@@ -263,7 +263,7 @@ function renderTable(){const d=CUR,km={};if(KV&&KV.flores)KV.flores.forEach(x=>k
  return `<tr><td>${f.n}</td><td>${f.etapa}</td><td>${(f.confianza*100).toFixed(0)}%</td><td><span class="tag t-${f.clave}">${f.veredicto}</span></td><td>${f.motivo}</td><td>${done?avisoKimi(k):'<span class="mut">—</span>'}</td><td class="mut">${ex}</td></tr>`}).join('')+'</table>'}
 function show(d){CUR=d;KV=null;const s=d.resumen;let h=`<div class="sum"><div class="pill p-ok">${s.aptas}<small>aptas</small></div><div class="pill p-no">${s.no_aptas}<small>no aptas</small></div><div class="pill p-gr">${s.zona_gris}<small>en zona gris</small></div></div>
 <img src="${d.imagen}" alt="Imagen anotada"><p class="mut">${s.total} flores detectadas en ${(d.tiempo_ms/1000).toFixed(1)} s (clasificador local)</p>`;
- if(d.flores.length){h+='<div id="tbl"></div><p class="mut">Los recortes se envían a un servicio externo (Moonshot) para la segunda opinión. Kimi: IA, no verificada por experto; describe, no decide. Clasifica sin ver la etapa local y su opinión es solo un aviso: el veredicto lo fija el clasificador local.</p>'}
+ if(d.flores.length){h+='<div id="tbl"></div><p class="mut">Los recortes se envían a un servicio externo (Moonshot) para la segunda opinión. Kimi: IA, no verificada por experto. Clasifica sin ver la etapa local y su opinión es solo un aviso: el veredicto lo fija el clasificador local.</p>'}
  else h+='<p>No se detectaron flores.</p>';$('out').innerHTML=h;if(d.flores.length){$('tbl').innerHTML=renderTable();poll(++TOK,Date.now(),0)}}
 async function poll(tok,t0,runMs){if(tok!==TOK||!CUR.kimi_disponible)return;let v;
  try{v=await (await fetch('/kimi/'+CUR.kimi_id)).json()}catch(e){v={estado:'error'}}

@@ -246,10 +246,16 @@ sobreabierto: pétalos separados, se pierde la forma de copa; más ancha que alt
 REGLAS
 - Ningún rasgo decide por sí solo; léelos en conjunto. La forma depende del ángulo de la cámara: no la uses sola.
 - Ante la duda entre óptimo y sobreabierto, o si el recorte está borroso, cortado u ocluido, pon duda=true y baja la confianza. Nunca inventes rasgos que no ves.
-- La explicación: 2-3 frases en español sencillo que justifiquen TU etapa con rasgos visibles (botón floral, pétalos, sépalos, caracol, copa, tono); empieza con "Describe, no decide:".
+- La explicación: UNA sola frase corta (máximo 20 palabras), concreta, que justifique TU etapa con los 2 rasgos visibles más decisivos (sépalos, caracol, copa o tono). Sin preámbulos, sin relleno y sin repetir la etapa.
 
 FORMATO
-Solo JSON estricto: {{"flores": [{{"n": número, "etapa": "inmaduro|óptimo|sobreabierto", "duda": true|false, "confianza": 0-1, "rasgos": {{"sepalos": "pegados|separados|no visible", "caracol": "definido|poco definido|no visible", "forma": "alargada|copa|ensanchada", "tono": "oscuro|vivo|apagado"}}, "motivo": "1 frase", "explicacion": "2-3 frases"}}, ...]}}"""
+Solo JSON estricto: {{"flores": [{{"n": número, "etapa": "inmaduro|óptimo|sobreabierto", "duda": true|false, "confianza": 0-1, "rasgos": {{"sepalos": "pegados|separados|no visible", "caracol": "definido|poco definido|no visible", "forma": "alargada|copa|ensanchada", "tono": "oscuro|vivo|apagado"}}, "motivo": "1 frase", "explicacion": "1 frase de máximo 20 palabras"}}, ...]}}"""
+
+
+def limpiar_explicacion(exp: str) -> str:
+    """Quita la cabecera 'Describe, no decide:' (también en textos precalculados) y capitaliza."""
+    exp = re.sub(r"^\s*describe,?\s*no decide\s*[:.\-]?\s*", "", str(exp), flags=re.I).strip()
+    return exp[:1].upper() + exp[1:]
 
 
 def api_key() -> str | None:
@@ -297,8 +303,7 @@ def parse_batch_json(text: str, validos: set[int]) -> dict[int, dict] | None:
             conf = max(0.0, min(1.0, float(it.get("confianza", 0))))
         except (TypeError, ValueError):
             conf = 0.0
-        if not exp.lower().startswith("describe, no decide"):
-            exp = CABECERA_EXPLICACION + exp[:1].lower() + exp[1:]
+        exp = limpiar_explicacion(exp)
         r = it.get("rasgos")
         out[n] = {"etapa": mapa[et], "duda": duda, "confianza": conf, "explicacion": exp,
                   "rasgos": r if isinstance(r, dict) else {}}
