@@ -16,3 +16,5 @@ UserSettings/
 # Salidas generadas
 outputs/*
 !outputs/.gitkeep
+
+.env
