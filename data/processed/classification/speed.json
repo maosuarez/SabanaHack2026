@@ -1,0 +1,14 @@
+{
+ "vit_s14": {
+  "cold_ms": 78.9,
+  "warm_median_ms": 76.8,
+  "warm_p95_ms": 397.7,
+  "n_warm": 50
+ },
+ "vit_b14": {
+  "cold_ms": 708.5,
+  "warm_median_ms": 211.4,
+  "warm_p95_ms": 807.6,
+  "n_warm": 50
+ }
+}

@@ -2,19 +2,19 @@
 
 ## 1. Datos y partición
 
-- [ ] 1.1 Generar recortes por caja desde `flowers.csv` en un directorio derivado (sin tocar `data/raw/`). Verificar: un recorte por flor anotable y conteo por etapa (128/41/9).
-- [ ] 1.2 Dividir train/val/test por md5, con recortes de una foto del mismo lado. Verificar: ningún md5 en dos conjuntos; conteo por clase y por conjunto en el chat.
-- [ ] 1.3 Reunir ejemplos de "reencuadrar" desde `04_Casos_Dificiles_Ruido`. Verificar: cantidad y revisión a ojo.
+- [x] 1.1 Generar recortes por caja desde `flowers.csv` en un directorio derivado (sin tocar `data/raw/`). Verificar: un recorte por flor anotable y conteo por etapa (128/41/9).
+- [x] 1.2 Dividir train/val/test por md5, con recortes de una foto del mismo lado. Verificar: ningún md5 en dos conjuntos; conteo por clase y por conjunto en el chat.
+- [ ] 1.3 Reunir ejemplos de "reencuadrar" desde `04_Casos_Dificiles_Ruido`. Verificar: cantidad y revisión a ojo. **Sin ejemplos reales:** no existe la carpeta `04_Casos_Dificiles_Ruido`; las 8 fotos "dificil" (24 flores) son flores válidas con caja. Propuesta pendiente: negativos sintéticos (fondo, desenfoque, recortes cortados), marcados como proxy.
 
 ## 2. Velocidad en CPU
 
-- [ ] 2.1 Confirmar la licencia de DINOv2 en el LICENSE de facebookresearch/dinov2. Verificar: licencia anotada con enlace.
-- [ ] 2.2 Medir ms por recorte de ViT-S/14 y ViT-B/14 en el CPU del portátil de la demo. Verificar: tabla con mediana y p95.
+- [x] 2.1 Confirmar la licencia de DINOv2 en el LICENSE de facebookresearch/dinov2. Verificar: licencia anotada con enlace.
+- [x] 2.2 Medir ms por recorte de ViT-S/14 y ViT-B/14 en el CPU del portátil de la demo. Verificar: tabla con mediana y p95.
 
 ## 3. Candidato A (DINOv2 + clasificador ligero)
 
-- [ ] 3.1 Extraer embeddings congelados de train/val/test (Colab o CPU). Verificar: archivo de embeddings por conjunto.
-- [ ] 3.2 Entrenar kNN y regresión logística, con aumentación solo en train (rot ±30°, zoom, brillo/contraste leves, sin hue fuerte). Verificar: métricas en validación por clase.
+- [x] 3.1 Extraer embeddings congelados de train/val/test (Colab o CPU). Verificar: archivo de embeddings por conjunto.
+- [x] 3.2 Entrenar kNN y regresión logística, con aumentación solo en train (rot ±30°, zoom, brillo/contraste leves, sin hue fuerte). Verificar: métricas en validación por clase.
 
 ## 4. Candidato B (VLM)
 
