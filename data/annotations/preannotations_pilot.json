@@ -1,0 +1,365 @@
+[
+ {
+  "data": {
+   "image": "/data/local-files/?d=images/rosa_01.jpeg",
+   "md5": "e10d5436b0a9f3a4fbae83f11f750678",
+   "image_id": 1
+  },
+  "predictions": [
+   {
+    "model_version": "google/owlv2-base-patch16-ensemble",
+    "score": 0.11934449523687363,
+    "result": [
+     {
+      "id": "det0",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 78.77685038248697,
+       "y": 5.157247066497803,
+       "width": 4.823176066080734,
+       "height": 4.302357196807861,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.11934449523687363
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=images/rosa_02.jpeg",
+   "md5": "5ac15b0e1c425bd1df37e21ef28eec78",
+   "image_id": 2
+  },
+  "predictions": [
+   {
+    "model_version": "google/owlv2-base-patch16-ensemble",
+    "score": 0.24498113058507442,
+    "result": [
+     {
+      "id": "det0",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 44.083709716796875,
+       "y": 25.93347930908203,
+       "width": 5.510706583658852,
+       "height": 4.705120086669922,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.10842088609933853
+     },
+     {
+      "id": "det1",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 46.89537048339844,
+       "y": 26.18680381774902,
+       "width": 12.756978352864586,
+       "height": 8.233713150024418,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.3231453597545624
+     },
+     {
+      "id": "det2",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 18.70828628540039,
+       "y": 7.842511177062988,
+       "width": 53.30875778198242,
+       "height": 45.257781028747566,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.3262852728366852
+     },
+     {
+      "id": "det3",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 17.261274973551433,
+       "y": 5.731234073638916,
+       "width": 75.52006657918294,
+       "height": 65.97237920761108,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.2220730036497116
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=images/rosa_08.jpeg",
+   "md5": "957ef08208a2713021eafc3b81729f35",
+   "image_id": 8
+  },
+  "predictions": [
+   {
+    "model_version": "google/owlv2-base-patch16-ensemble",
+    "score": 0.1541900873184204,
+    "result": [
+     {
+      "id": "det0",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 65.31570943196616,
+       "y": 23.520153045654297,
+       "width": 9.498341878255204,
+       "height": 8.045829772949219,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.19679807126522064
+     },
+     {
+      "id": "det1",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 16.690723419189453,
+       "y": 25.156099319458008,
+       "width": 5.448818206787109,
+       "height": 4.993801116943359,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.15256398916244507
+     },
+     {
+      "id": "det2",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 46.32696024576823,
+       "y": 22.808181762695312,
+       "width": 7.132680257161461,
+       "height": 9.085041046142578,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.1299540102481842
+     },
+     {
+      "id": "det3",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 0.31658808390299475,
+       "y": 16.42083740234375,
+       "width": 98.2791862487793,
+       "height": 39.16697692871094,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.10652351379394531
+     },
+     {
+      "id": "det4",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 87.47149658203125,
+       "y": 58.14682388305664,
+       "width": 7.201639811197907,
+       "height": 6.253170013427734,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.18511085212230682
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=images/rosa_12.jpeg",
+   "md5": "06b3136ab34460570f68d561e614f08e",
+   "image_id": 12
+  },
+  "predictions": [
+   {
+    "model_version": "google/owlv2-base-patch16-ensemble",
+    "score": 0.1385529339313507,
+    "result": [
+     {
+      "id": "det0",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 46.19585164388021,
+       "y": 34.59406661987305,
+       "width": 4.639348347981766,
+       "height": 4.278999328613281,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.14805732667446136
+     },
+     {
+      "id": "det1",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 37.93592071533203,
+       "y": 34.520259857177734,
+       "width": 32.549074808756515,
+       "height": 19.29474639892578,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.12904854118824005
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "data": {
+   "image": "/data/local-files/?d=images/rosa_13.jpeg",
+   "md5": "c2a14204e3391d1013fb9afa8a6005d4",
+   "image_id": 13
+  },
+  "predictions": [
+   {
+    "model_version": "google/owlv2-base-patch16-ensemble",
+    "score": 0.18807020969688892,
+    "result": [
+     {
+      "id": "det0",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 62.390492757161454,
+       "y": 27.355634689331055,
+       "width": 18.206232706705734,
+       "height": 14.815717697143555,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.2552371323108673
+     },
+     {
+      "id": "det1",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 52.889973958333336,
+       "y": 27.79338645935059,
+       "width": 27.99847920735676,
+       "height": 61.95746040344238,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.1381690502166748
+     },
+     {
+      "id": "det2",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 76.11036173502605,
+       "y": 57.75753402709961,
+       "width": 8.218546549479171,
+       "height": 5.714962005615234,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.23519189655780792
+     },
+     {
+      "id": "det3",
+      "from_name": "stage",
+      "to_name": "image",
+      "type": "rectanglelabels",
+      "original_width": 1200,
+      "original_height": 1600,
+      "image_rotation": 0,
+      "value": {
+       "x": 77.46404012044272,
+       "y": 69.90265655517578,
+       "width": 22.427317301432282,
+       "height": 29.870452880859375,
+       "rotation": 0,
+       "rectanglelabels": []
+      },
+      "score": 0.12368275970220566
+     }
+    ]
+   }
+  ]
+ }
+]

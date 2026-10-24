@@ -1,0 +1,14 @@
+<View>
+  <Image name="image" value="$image" zoom="true" zoomControl="true" rotateControl="false"/>
+  <!-- Una caja por rosa; la etapa es la clase de la caja -->
+  <RectangleLabels name="stage" toName="image" strokeWidth="3">
+    <Label value="inmaduro" background="#2e7d32"/>
+    <Label value="optimo" background="#d81b60"/>
+    <Label value="sobreabierto" background="#f9a825"/>
+  </RectangleLabels>
+  <!-- Atributos por caja: aparecen al seleccionar la región -->
+  <Choices name="doubtful" toName="image" perRegion="true" choice="multiple" showInline="true">
+    <Choice value="dudosa"/>
+    <Choice value="no_anotable"/>
+  </Choices>
+</View>
