@@ -1,0 +1,2463 @@
+{
+ "modelo": "kimi-k3",
+ "lotes": {
+  "0": {
+   "ok": true,
+   "error": null,
+   "wall_s": 41.0,
+   "timeout_usado": 150.0,
+   "tokens_in": 966,
+   "tokens_out": 2679,
+   "ids": [
+    "d5e7a7b7_07",
+    "e6335a9f_01",
+    "380c3267_05",
+    "270f879f_03",
+    "e8d16d5e_02",
+    "1997cc99_03",
+    "06b3136a_03",
+    "d84ae354_01",
+    "e8d16d5e_01",
+    "b6c4e2d5_07",
+    "b2708fa2_01",
+    "d5e7a7b7_03",
+    "4a9d83db_01",
+    "d84ae354_05",
+    "bd5423fa_01"
+   ],
+   "res": {
+    "d5e7a7b7_07": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral se ve alargado y más alto que ancho, con un tono rojo oscuro. Los sépalos están pegados a los pétalos y no se alcanza a ver el caracol interno, por lo que la rosa aún está cerrada.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "e6335a9f_01": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.82,
+     "explicacion": "Describe, no decide: la cabeza se ve pequeña y alargada, con color rojo oscuro. Los sépalos siguen pegados a los pétalos y no se distingue el caracol, por lo que la flor aún no muestra apertura suficiente.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "380c3267_05": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: la imagen es muy pequeña y con poco detalle, pero el botón se ve oscuro y alargado. No se distinguen sépalos separados ni el caracol, por lo que parece una flor aún cerrada.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "270f879f_03": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: la flor tiene forma de copa, casi tan ancha como alta, y un tono rojo vivo. Los pétalos externos empiezan a separarse y los sépalos ya no están totalmente pegados, aunque el caracol solo se percibe de forma parcial.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "e8d16d5e_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.65,
+     "explicacion": "Describe, no decide: el botón se ve oscuro, cerrado y más alto que ancho. Los sépalos parecen pegados y no se observa el caracol, aunque la imagen está algo limitada para confirmar todos los detalles.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "1997cc99_03": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.8,
+     "explicacion": "Describe, no decide: la cabeza floral se ve alargada y de color rojo oscuro. Los sépalos permanecen pegados a los pétalos y no se aprecia una apertura clara del centro.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "06b3136a_03": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.86,
+     "explicacion": "Describe, no decide: el botón floral se ve estrecho, alargado y completamente cerrado. Los sépalos están pegados y no se observa el caracol ni separación de pétalos externos.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "d84ae354_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.88,
+     "explicacion": "Describe, no decide: la flor muestra una copa roja viva, con pétalos externos que ya empiezan a separarse. Aunque el caracol no se ve con total claridad, la apertura general y la forma de copa indican una etapa adecuada.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "e8d16d5e_01": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.62,
+     "explicacion": "Describe, no decide: el recorte es pequeño y poco nítido, pero el botón se ve oscuro y alargado. No se distinguen sépalos separados ni apertura del centro, por lo que parece una flor aún cerrada.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "b6c4e2d5_07": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.84,
+     "explicacion": "Describe, no decide: la cabeza se ve pequeña, alargada y oscura. Los sépalos están pegados a los pétalos y no se observa apertura del caracol, por lo que la flor sigue inmadura.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "b2708fa2_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.93,
+     "explicacion": "Describe, no decide: la rosa tiene forma de copa y un tono rojo vivo e intenso. El caracol está definido y deja ver el centro, mientras los pétalos externos empiezan a separarse sin perder la estructura de copa.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "d5e7a7b7_03": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.58,
+     "explicacion": "Describe, no decide: la imagen es muy pequeña y con poco detalle, pero se percibe una cabeza oscura y alargada. No se logran ver sépalos separados ni el caracol, por lo que parece una flor cerrada.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "4a9d83db_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.89,
+     "explicacion": "Describe, no decide: la flor muestra una copa amplia pero aún contenida, con color rojo vivo. Los pétalos externos empiezan a separarse y los sépalos ya se ven abiertos, aunque el caracol no se distingue por completo.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "d84ae354_05": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: el recorte es pequeño y borroso, pero el botón luce oscuro y alargado. No se observan pétalos separados ni caracol visible, por lo que parece una etapa cerrada.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "bd5423fa_01": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.83,
+     "explicacion": "Describe, no decide: la cabeza floral se ve alargada, oscura y cerrada. Los sépalos permanecen pegados a los pétalos y no se aprecia el caracol, por lo que la rosa aún no está en apertura.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    }
+   }
+  },
+  "1": {
+   "ok": true,
+   "error": null,
+   "wall_s": 58.8,
+   "timeout_usado": 150.0,
+   "tokens_in": 1021,
+   "tokens_out": 2774,
+   "ids": [
+    "96c42e25_02",
+    "034f04bd_05",
+    "b3fc9242_01",
+    "957ef082_04",
+    "8a3242ed_02",
+    "a8cb0a17_04",
+    "06b3136a_06",
+    "17e2e38f_01",
+    "d92d6c99_03",
+    "b6c4e2d5_06",
+    "f8f95f50_03",
+    "d5e7a7b7_04",
+    "d5e7a7b7_06",
+    "a8cb0a17_01",
+    "8a3242ed_03"
+   ],
+   "res": {
+    "96c42e25_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.45,
+     "explicacion": "Describe, no decide: El botón floral se ve alargado y completamente cerrado, con los sépalos pegados a los pétalos. No se distingue el caracol ni apertura de pétalos externos. La imagen está muy borrosa y cortada, lo que limita la evaluación.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "034f04bd_05": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.4,
+     "explicacion": "Describe, no decide: El recorte es muy pequeño y está subexpuesto, apenas se distingue una forma alargada y cerrada. No se ven pétalos separados ni caracol. La falta de detalle obliga a bajar la confianza.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "b3fc9242_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.78,
+     "explicacion": "Describe, no decide: La rosa muestra un tono rojo vivo e intenso con forma de copa, aproximadamente tan ancha como alta. Los pétalos externos comienzan a separarse pero la copa se mantiene compacta. El caracol interno no se ve claramente desde este ángulo, pero el conjunto de rasgos es consistente con punto de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "957ef082_04": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.82,
+     "explicacion": "Describe, no decide: La rosa tiene forma de copa clara, con el caracol interno definido y visible en la parte superior. El tono rojo es vivo e intenso. Los pétalos externos empiezan a separarse pero la estructura de copa se mantiene firme.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "8a3242ed_02": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: El botón floral está completamente cerrado, con los sépalos pegados cubriendo los pétalos. La forma es alargada, más alta que ancha, y el tono es verde oscuro sin rojo visible. Es claramente inmaduro.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "a8cb0a17_04": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.8,
+     "explicacion": "Describe, no decide: El botón se ve desde abajo a contraluz, con los sépalos pegados y puntiagudos cerrando la flor. La forma es alargada y no se observa apertura de pétalos ni caracol. El tono es oscuro por el contraluz.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "06b3136a_06": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.5,
+     "explicacion": "Describe, no decide: El recorte es muy pequeño y oscuro, se distingue una forma alargada y cerrada. No se observan pétalos separados ni caracol. La baja resolución impide una evaluación detallada.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "17e2e38f_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.75,
+     "explicacion": "Describe, no decide: La rosa muestra un tono rojo visible a pesar del contraluz, con forma de copa. Los pétalos externos están empezando a separarse y los sépalos se ven separados de la corola. El caracol no se aprecia claramente desde este ángulo pero el conjunto sugiere punto de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "d92d6c99_03": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.82,
+     "explicacion": "Describe, no decide: El botón floral se ve desde abajo, completamente cerrado con los sépalos verdes pegados a los pétalos. La forma es alargada y redondeada en la base, sin apertura visible. No se observa color rojo ni caracol.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "b6c4e2d5_06": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.45,
+     "explicacion": "Describe, no decide: El recorte es extremadamente pequeño y borroso, apenas se intuye una forma alargada y cerrada. No se pueden distinguir sépalos, pétalos ni caracol con claridad. La falta de información visual obliga a marcar duda.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "f8f95f50_03": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: El botón se ve a contraluz con forma alargada y los sépalos pegados a los pétalos. No se distingue apertura ni caracol. El tono es muy oscuro por la iluminación, lo que genera algo de duda, pero la forma cerrada es el rasgo dominante.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "d5e7a7b7_04": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: La rosa presenta una forma de copa clara, aproximadamente tan ancha como alta. El caracol interno está definido y se deja ver el centro. El tono rojo es vivo e intenso, y los pétalos externos empiezan a separarse mientras la copa se mantiene. Es la imagen más representativa del punto de corte óptimo.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "d5e7a7b7_06": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.8,
+     "explicacion": "Describe, no decide: La rosa muestra un tono rojo vivo con forma de copa, rodeada de follaje verde. Los pétalos externos están empezando a separarse y los sépalos se ven separados. El caracol no se aprecia completamente desde este ángulo, pero la forma y el tono son consistentes con punto de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "a8cb0a17_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.8,
+     "explicacion": "Describe, no decide: La rosa tiene forma de copa clara vista desde abajo, con el caracol interno definido y visible. Los sépalos están separados y extendidos hacia afuera. El tono rojo es intenso a pesar del contraluz, y la copa se mantiene compacta sin ensancharse.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "8a3242ed_03": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.5,
+     "explicacion": "Describe, no decide: El recorte es muy pequeño, se distingue un botón floral alargado y cerrado con los sépalos pegados. No se observa apertura de pétalos ni caracol. El tamaño reducido de la imagen limita la evaluación y genera duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    }
+   }
+  },
+  "2": {
+   "ok": true,
+   "error": null,
+   "wall_s": 57.9,
+   "timeout_usado": 150.0,
+   "tokens_in": 1027,
+   "tokens_out": 2563,
+   "ids": [
+    "034f04bd_03",
+    "7a2e4e22_04",
+    "99e80d6c_01",
+    "d5e7a7b7_05",
+    "d5e7a7b7_02",
+    "034f04bd_04",
+    "17e5863c_04",
+    "53746c8f_04",
+    "53746c8f_03",
+    "8a3242ed_05",
+    "83c44195_01",
+    "e6335a9f_02",
+    "d5e7a7b7_01",
+    "957ef082_07",
+    "17e5863c_02"
+   ],
+   "res": {
+    "034f04bd_03": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.4,
+     "explicacion": "Describe, no decide: el botón se ve pequeño y oscuro, con forma alargada. No se distingue el caracol ni pétalos separándose. La imagen es muy pequeña, por lo que hay duda.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "7a2e4e22_04": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.4,
+     "explicacion": "Describe, no decide: se ve un botón cerrado con sépalos pegados y tono oscuro. No hay señal de pétalos abriéndose ni caracol definido. El recorte es pequeño y algo borroso.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "99e80d6c_01": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.75,
+     "explicacion": "Describe, no decide: el botón es alargado, más alto que ancho, con sépalos pegados cubriendo casi todo. Apenas se ve el tono oscuro de los pétalos internos. No hay caracol ni apertura.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "d5e7a7b7_05": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.7,
+     "explicacion": "Describe, no decide: el botón muestra pétalos de tono rojo oscuro con los sépalos todavía pegados. La forma es alargada y no se aprecia apertura de copa. El caracol apenas se insinúa.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "poco definido",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "d5e7a7b7_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: los sépalos verdes aún cubren gran parte del botón y los pétalos visibles son de rojo oscuro. La forma sigue alargada, aunque empieza a ensancharse levemente. No se ve caracol definido.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "poco definido",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "034f04bd_04": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.35,
+     "explicacion": "Describe, no decide: la imagen es muy pequeña y borrosa, solo se distingue un botón oscuro y cerrado. No se pueden identificar rasgos claros de apertura. La confianza es baja por la calidad del recorte.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "17e5863c_04": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.5,
+     "explicacion": "Describe, no decide: se ve un botón de tono oscuro con los sépalos aún pegados en la base. Hay una leve insinuación de pétalos internos pero sin caracol definido. La forma sigue siendo alargada.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "poco definido",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "53746c8f_04": {
+     "etapa": "óptimo",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: los pétalos muestran un rojo vivo y los sépalos verdes se están separando hacia abajo. La forma empieza a ser de copa, aunque el caracol no se ve claramente desde este ángulo. Hay duda porque la vista inferior no permite confirmar la espiral interna.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "53746c8f_03": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.7,
+     "explicacion": "Describe, no decide: los sépalos se han separado y apuntan hacia afuera, dejando ver pétalos de rojo intenso. La forma es de copa, aproximadamente tan ancha como alta. El caracol no se aprecia del todo desde abajo, pero el conjunto sugiere punto de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "8a3242ed_05": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.45,
+     "explicacion": "Describe, no decide: el botón se ve pequeño, oscuro y alargado, con sépalos aparentemente pegados. La imagen es borrosa y no permite ver detalles de apertura. Se clasifica como inmaduro con duda por la calidad.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "83c44195_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: se aprecia el caracol de pétalos internos bien definido y un rojo vivo e intenso. La forma es de copa, tan ancha como alta, con los pétalos externos empezando a separarse sin perder la estructura. Es el punto de corte clásico.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "e6335a9f_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.5,
+     "explicacion": "Describe, no decide: los sépalos verdes aún abrazan gran parte del botón y los pétalos visibles son oscuros. No se distingue caracol ni apertura de copa. Hay algo de duda por el ángulo y la luz.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "d5e7a7b7_01": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: el botón es alargado con los sépalos verdes cubriendo los laterales y pétalos de tono oscuro visibles en el centro. No hay caracol definido ni copa formada. Podría estar cerca de madurar, pero aún no está en punto.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "poco definido",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "957ef082_07": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.3,
+     "explicacion": "Describe, no decide: la imagen está muy borrosa y quemada por la luz, solo se intuye un botón verdoso y cerrado. No se pueden identificar rasgos confiables. Se clasifica como inmaduro con baja confianza y duda marcada.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "17e5863c_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.25,
+     "explicacion": "Describe, no decide: el recorte es extremadamente pequeño y solo se distingue una forma alargada y oscura, compatible con un botón cerrado. No es posible identificar sépalos, caracol ni tono con certeza. La confianza es muy baja.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    }
+   }
+  },
+  "3": {
+   "ok": true,
+   "error": null,
+   "wall_s": 51.8,
+   "timeout_usado": 150.0,
+   "tokens_in": 1084,
+   "tokens_out": 2345,
+   "ids": [
+    "b6c4e2d5_04",
+    "034f04bd_01",
+    "d84ae354_07",
+    "3c6d960a_01",
+    "794fecf0_01",
+    "380c3267_03",
+    "270f879f_02",
+    "10fa5038_02",
+    "380c3267_02",
+    "d84ae354_04",
+    "35e90145_01",
+    "53bc3479_01",
+    "b3fc9242_02",
+    "8a3242ed_01",
+    "10fa5038_01"
+   ],
+   "res": {
+    "b6c4e2d5_04": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: la cabeza se ve pequeña y alargada, más alta que ancha. Los sépalos están pegados a los pétalos y el rojo apenas asoma oscuro en la punta. No se ve caracol ni apertura.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "034f04bd_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.8,
+     "explicacion": "Describe, no decide: la flor tiene forma de copa, casi tan ancha como alta, con rojo vivo. Los pétalos externos empiezan a separarse y los sépalos ya bajan, aunque el caracol solo se insinúa en la punta.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "d84ae354_07": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: la imagen es muy pequeña y grisácea, pero se alcanza a ver una forma alargada y cerrada. No se distingue caracol ni apertura de pétalos.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "3c6d960a_01": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: el botón es alto y estrecho, con sépalos largos que suben pegados por los lados. El rojo se ve oscuro y no hay caracol visible; la apertura en la punta es mínima.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "794fecf0_01": {
+     "etapa": "sobreabierto",
+     "duda": false,
+     "confianza": 0.8,
+     "explicacion": "Describe, no decide: los pétalos están muy abiertos y separados, la flor es más ancha que alta y perdió la forma de copa. El centro queda expuesto y la silueta se ensancha hacia arriba.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "no visible",
+      "forma": "ensanchada",
+      "tono": "vivo"
+     }
+    },
+    "380c3267_03": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: se ve un botón pequeño, alargado y cerrado, con sépalos cubriendo todo. El rojo casi no asoma y la imagen está borrosa, por eso bajo la confianza.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "270f879f_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: la cabeza es pequeña, con sépalos pegados y pétalos oscuros sin abrir. No se ve caracol; la forma es compacta pero sin signos de apertura.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "10fa5038_02": {
+     "etapa": "óptimo",
+     "duda": true,
+     "confianza": 0.65,
+     "explicacion": "Describe, no decide: la copa se ve roja y viva, con pétalos externos empezando a separarse y sépalos bajando. La foto es lateral y algo borrosa, así que el caracol no se aprecia bien.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "380c3267_02": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.75,
+     "explicacion": "Describe, no decide: la flor muestra una copa roja casi tan ancha como alta, con pétalos externos separándose. El caracol se insinúa en la parte superior y los sépalos ya se abren.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "d84ae354_04": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: se aprecia un botón alargado y cerrado, dominado por los sépalos. El rojo apenas se ve y la calidad de la imagen es baja.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "35e90145_01": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.75,
+     "explicacion": "Describe, no decide: el botón es claramente más alto que ancho, con sépalos largos que lo envuelven. El rojo oscuro asoma apenas en la punta y no hay caracol visible.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "53bc3479_01": {
+     "etapa": "sobreabierto",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: la flor se ve muy abierta, más ancha que alta, con pétalos separados y copa perdida. El fuerte contraluz oscurece los detalles, por eso marco duda.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "no visible",
+      "forma": "ensanchada",
+      "tono": "apagado"
+     }
+    },
+    "b3fc9242_02": {
+     "etapa": "óptimo",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: se ve rojo vivo con pétalos empezando a separarse y sépalos abiertos. La flor está parcialmente tapada y el ángulo es cerrado, así que no confirmo el caracol.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "no visible",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "8a3242ed_01": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.75,
+     "explicacion": "Describe, no decide: el botón está cerrado, con sépalos verdes cubriendo la mayor parte y solo un borde oscuro de pétalos arriba. La forma es alargada y no hay apertura.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "10fa5038_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: la flor tiene forma de copa, tan ancha como alta, con rojo vivo e intenso. El caracol está definido en la parte superior y los sépalos ya se abrieron, con pétalos externos empezando a separarse.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    }
+   }
+  },
+  "4": {
+   "ok": true,
+   "error": null,
+   "wall_s": 40.9,
+   "timeout_usado": 150.0,
+   "tokens_in": 1081,
+   "tokens_out": 2765,
+   "ids": [
+    "e5d6a544_01",
+    "e6335a9f_04",
+    "8a3242ed_04",
+    "6e57e2e2_01",
+    "034f04bd_02",
+    "7a2e4e22_02",
+    "2145a7d6_01",
+    "e25db934_01",
+    "e159437c_01",
+    "496abf0d_01",
+    "270f879f_01",
+    "06b3136a_05",
+    "b6c4e2d5_05",
+    "e10d5436_01",
+    "10950076_02"
+   ],
+   "res": {
+    "e5d6a544_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: la flor muestra un caracol interno bien definido que deja ver el centro. Los pétalos externos empiezan a separarse pero mantienen la forma de copa. El tono rojo es vivo e intenso, característico del punto de corte óptimo.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "e6335a9f_04": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: el botón floral está completamente cerrado con los sépalos pegados a los pétalos. La forma es alargada, más alta que ancha, y no se observa el caracol interno. El color visible es oscuro, indicando inmadurez.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "8a3242ed_04": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.7,
+     "explicacion": "Describe, no decide: el botón aparece cerrado con sépalos pegados y forma alargada. La imagen está borrosa y el recorte es pequeño, lo que limita la observación de detalles. Los rasgos visibles sugieren etapa inmadura.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "6e57e2e2_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: se observa el caracol interno definido con el centro visible. La forma es de copa, aproximadamente tan ancha como alta, con pétalos externos comenzando a separarse. El tono rojo es vivo, indicando punto óptimo de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "034f04bd_02": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: el botón floral está completamente cerrado con sépalos pegados cubriendo los pétalos. La forma es muy alargada, claramente más alta que ancha. No se observa apertura ni caracol, indicando etapa inmadura.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "7a2e4e22_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.65,
+     "explicacion": "Describe, no decide: los sépalos están separados pero la flor permanece cerrada con forma alargada. El tono rojo es oscuro y no se observa el caracol interno. La imagen está algo borrosa, lo que genera duda en la clasificación.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "2145a7d6_01": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: la flor aparece muy cerrada con forma alargada y tono oscuro. La imagen está a contraluz y silueteada, lo que dificulta ver detalles de sépalos y caracol. Los rasgos visibles sugieren inmadurez pero con incertidumbre.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "e25db934_01": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.8,
+     "explicacion": "Describe, no decide: los sépalos están separados pero el botón floral permanece cerrado con forma alargada. El tono es oscuro y el caracol apenas se insinúa sin estar definido. La flor aún no alcanza la apertura óptima.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "e159437c_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: el caracol interno está claramente definido y deja ver el centro de la flor. La forma es de copa equilibrada, con pétalos externos separándose pero manteniendo la estructura. El tono rojo es vivo e intenso, ideal para corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "496abf0d_01": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.7,
+     "explicacion": "Describe, no decide: el botón está cerrado con los sépalos aún pegados o muy cercanos a los pétalos. La forma es alargada y el tono visible es oscuro. La imagen está algo inclinada y borrosa, lo que genera ligera duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "270f879f_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: se observa el caracol interno definido con apertura hacia el centro. La forma es de copa, tan ancha como alta, con sépalos separados. El tono rojo es vivo, indicando que está en el punto óptimo de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "06b3136a_05": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: el botón floral está completamente cerrado con sépalos pegados. La forma es muy alargada y la cabeza se ve pequeña. No hay apertura visible ni caracol, claramente en etapa inmadura.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "b6c4e2d5_05": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: la imagen está muy borrosa y el recorte es muy pequeño para observar detalles claros. Se aprecia una forma alargada y tono oscuro que sugiere inmadurez. La baja calidad de la imagen genera alta incertidumbre.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "e10d5436_01": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.65,
+     "explicacion": "Describe, no decide: el botón está mayormente cerrado con los sépalos cubriendo gran parte de los pétalos. Se observa algo de apertura en la punta pero sin caracol definido. La forma es alargada, indicando que aún no está en punto óptimo.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "10950076_02": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral está cerrado con los sépalos aún pegados o cubriendo la mayor parte de los pétalos. Se observa algo de color en la punta pero sin apertura del caracol. La forma es alargada, indicando etapa inmadura.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    }
+   }
+  },
+  "5": {
+   "ok": true,
+   "error": null,
+   "wall_s": 42.0,
+   "timeout_usado": 150.0,
+   "tokens_in": 980,
+   "tokens_out": 2649,
+   "ids": [
+    "f8f95f50_02",
+    "53bc3479_04",
+    "034f04bd_08",
+    "d92d6c99_01",
+    "06b3136a_04",
+    "034f04bd_06",
+    "8b300f31_05",
+    "957ef082_02",
+    "8deb940a_01",
+    "8b11ccaf_01",
+    "957ef082_01",
+    "8b300f31_01",
+    "1997cc99_04",
+    "b6c4e2d5_02",
+    "da2b36fe_01"
+   ],
+   "res": {
+    "f8f95f50_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.72,
+     "explicacion": "Describe, no decide: el botón se ve cerrado y más alto que ancho, con los sépalos pegados a los pétalos. No se alcanza a ver el caracol ni separación de pétalos externos. El tono rojo se ve oscuro por la madurez temprana y el contraluz.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "53bc3479_04": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: la imagen es muy pequeña y poco nítida, pero la cabeza floral se ve compacta y alargada. Los sépalos parecen pegados y no se distingue caracol. Por la baja visibilidad marco duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "034f04bd_08": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: se aprecia un botón floral diminuto, de forma alargada y sin pétalos separándose. Los sépalos cubren la base y el caracol no es visible. La poca resolución obliga a bajar la confianza.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "d92d6c99_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.88,
+     "explicacion": "Describe, no decide: la flor tiene forma de copa, casi tan ancha como alta, y el caracol interno se distingue con el centro asomando. Los pétalos externos empiezan a abrirse sin perder la copa y los sépalos se separan de la corola. El rojo se ve vivo e intenso.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "06b3136a_04": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.68,
+     "explicacion": "Describe, no decide: la cabeza se ve pequeña, más alta que ancha, con sépalos pegados a los pétalos. No se observa caracol ni apertura de pétalos externos. El tono es oscuro y la imagen algo borrosa, así que dejo duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "034f04bd_06": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.62,
+     "explicacion": "Describe, no decide: el botón es pequeño y alargado, con los sépalos cubriendo casi toda la corola. El rojo visible es oscuro y no hay caracol definido. La imagen es de baja resolución, por eso marco duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "8b300f31_05": {
+     "etapa": "óptimo",
+     "duda": true,
+     "confianza": 0.7,
+     "explicacion": "Describe, no decide: la flor muestra forma de copa con pétalos externos comenzando a separarse y sépalos abiertos. El caracol se intuye pero el contraluz lo deja muy oscuro y poco definido. Por eso mantengo duda sobre si ya está en pleno punto de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "oscuro"
+     }
+    },
+    "957ef082_02": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: la rosa tiene forma de copa equilibrada, con el caracol interno definido y el centro apenas visible. Los pétalos externos se separan ligeramente y los sépalos están abiertos. El tono rojo se ve vivo, propio del punto de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "8deb940a_01": {
+     "etapa": "óptimo",
+     "duda": true,
+     "confianza": 0.62,
+     "explicacion": "Describe, no decide: se ve una copa con pétalos externos empezando a abrirse y sépalos separados. Sin embargo, la imagen está oscura y con elementos que tapan la flor, por lo que el caracol no se aprecia. Marco duda por la visibilidad limitada.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "no visible",
+      "forma": "copa",
+      "tono": "oscuro"
+     }
+    },
+    "8b11ccaf_01": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: la flor aparece parcialmente tapada por hojas, con forma alargada y tono rojo oscuro. No se distinguen bien sépalos ni caracol. Por la oclusión y el encuadre marco duda y baja confianza.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "957ef082_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: la rosa muestra una copa bien formada, casi tan ancha como alta, con el caracol interno claramente definido y el centro visible. Los pétalos externos comienzan a separarse sin perder la estructura y los sépalos están abiertos. El rojo es intenso, típico del punto de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "8b300f31_01": {
+     "etapa": "óptimo",
+     "duda": true,
+     "confianza": 0.68,
+     "explicacion": "Describe, no decide: la flor tiene forma de copa con pétalos externos empezando a separarse y sépalos abiertos. El caracol se percibe poco definido por la fuerte luz de fondo que oscurece la corola. Dejo duda porque no se confirma con claridad el centro.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "oscuro"
+     }
+    },
+    "1997cc99_04": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.58,
+     "explicacion": "Describe, no decide: se aprecia un botón floral muy pequeño, alargado y dominado por los sépalos pegados. Apenas se ve algo de pétalo y nada de caracol. La baja resolución me obliga a marcar duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "b6c4e2d5_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: el botón se ve compacto, más alto que ancho, con los sépalos pegados cubriendo la corola. No hay caracol ni pétalos separándose. La imagen es pequeña y algo borrosa, por eso bajo la confianza.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "da2b36fe_01": {
+     "etapa": "óptimo",
+     "duda": true,
+     "confianza": 0.66,
+     "explicacion": "Describe, no decide: la flor muestra forma de copa con pétalos externos comenzando a separarse y sépalos abiertos. El caracol apenas se insinúa porque el contraluz oscurece la corola y hay elementos del fondo que estorban. Marco duda por la visibilidad limitada.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "oscuro"
+     }
+    }
+   }
+  },
+  "6": {
+   "ok": true,
+   "error": null,
+   "wall_s": 46.2,
+   "timeout_usado": 150.0,
+   "tokens_in": 1130,
+   "tokens_out": 2745,
+   "ids": [
+    "c2a14204_01",
+    "f2c7cfeb_04",
+    "17e5863c_01",
+    "e0be4e1b_02",
+    "10950076_03",
+    "6b50d559_02",
+    "8a6b61b9_01",
+    "a8cb0a17_02",
+    "957ef082_03",
+    "06b3136a_02",
+    "b2708fa2_02",
+    "17e5863c_05",
+    "9adb13e4_05",
+    "380c3267_01",
+    "8b11ccaf_02"
+   ],
+   "res": {
+    "c2a14204_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: el botón muestra pétalos externos separándose pero manteniendo la forma de copa. El caracol interno está claramente definido y se aprecia el centro. El tono rojo es vivo e intenso, característico del punto óptimo de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "f2c7cfeb_04": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral está totalmente cerrado con los sépalos pegados a los pétalos. La forma es alargada, más alta que ancha, y el color es oscuro. No hay apertura visible del caracol.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "17e5863c_01": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón permanece cerrado con los sépalos completamente pegados. La forma es alargada y estrecha, sin apertura visible. El color oscuro indica que aún no ha alcanzado el punto de corte.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "e0be4e1b_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: los sépalos muestran cierta separación pero el botón sigue mayormente cerrado. El caracol apenas se insinúa y el tono es oscuro. La imagen está algo borrosa lo que dificulta la evaluación completa.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "10950076_03": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón muestra sépalos claramente separados y pétalos externos iniciando apertura. El caracol está definido y se aprecia el espiral interno. La forma es de copa equilibrada con tono rojo vivo.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "6b50d559_02": {
+     "etapa": "óptimo",
+     "duda": true,
+     "confianza": 0.65,
+     "explicacion": "Describe, no decide: el botón presenta forma de copa y color rojo vivo. Sin embargo, una hoja ocluye parcialmente la vista y no se aprecian bien los sépalos ni el caracol completo. La evaluación es limitada por la obstrucción.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "8a6b61b9_01": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral está cerrado con forma alargada y estrecha. Los sépalos permanecen pegados a los pétalos sin separación visible. El tono oscuro indica inmadurez para el corte.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "a8cb0a17_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: el botón se muestra cerrado con tono oscuro y forma alargada. Aunque algunos sépalos parecen separarse, una hoja grande ocluye parte importante de la flor. La visibilidad limitada genera duda en la clasificación.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "957ef082_03": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: el botón muestra sépalos claramente separados y recurvados. El caracol está bien definido con el centro visible. La forma de copa es equilibrada y el tono rojo es vivo e intenso.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "06b3136a_02": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral permanece cerrado con sépalos puntiagudos adheridos. La forma es alargada, más alta que ancha. No hay apertura visible del caracol y el tono es oscuro.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "b2708fa2_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: la imagen está muy borrosa y el botón aparece oscuro y cerrado. La forma parece alargada pero los detalles de sépalos y caracol no son distinguibles. La baja calidad de la imagen genera alta duda.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "17e5863c_05": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.5,
+     "explicacion": "Describe, no decide: la imagen está muy borrosa y con poca luz. El botón parece cerrado y oscuro pero no se distinguen claramente los sépalos ni el caracol. La clasificación es tentativa por la baja calidad visual.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "9adb13e4_05": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.8,
+     "explicacion": "Describe, no decide: el botón muestra sépalos separados y pétalos externos comenzando a abrirse. El caracol está definido y se aprecia la espiral interna. La forma es de copa con tono que tiende a vivo.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "380c3267_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón presenta el caracol claramente definido con el centro visible. Los sépalos están separados y los pétalos externos inician apertura manteniendo la copa. El tono rojo es vivo e intenso.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "8b11ccaf_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: la imagen es muy pequeña y está borrosa. El botón parece cerrado con forma alargada y tono oscuro. Los detalles de sépalos y caracol no son apreciables con claridad.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    }
+   }
+  },
+  "7": {
+   "ok": true,
+   "error": null,
+   "wall_s": 48.6,
+   "timeout_usado": 150.0,
+   "tokens_in": 994,
+   "tokens_out": 2460,
+   "ids": [
+    "d794ae0a_03",
+    "e6335a9f_03",
+    "e6335a9f_05",
+    "8b300f31_06",
+    "8b300f31_03",
+    "1997cc99_02",
+    "d84ae354_02",
+    "8b300f31_04",
+    "1997cc99_01",
+    "96c42e25_01",
+    "0a6ecd17_03",
+    "d84ae354_06",
+    "53bc3479_02",
+    "35e90145_03",
+    "0a6ecd17_04"
+   ],
+   "res": {
+    "d794ae0a_03": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral se ve alargado y más alto que ancho. Los sépalos están pegados a los pétalos y el tono rojo es oscuro. No se observa el caracol interno.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "e6335a9f_03": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: el botón tiene forma alargada y puntiaguda. Los sépalos están completamente pegados y el color es oscuro. No hay apertura visible de pétalos.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "e6335a9f_05": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón se ve pequeño y alargado. Los sépalos están pegados y no se distingue el caracol. El tono es oscuro.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "8b300f31_06": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: la imagen está borrosa y el botón se ve oscuro. La forma parece alargada pero no se distinguen bien los sépalos. No se observa apertura.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "8b300f31_03": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.8,
+     "explicacion": "Describe, no decide: la flor muestra forma de copa con pétalos externos separándose. El caracol interno está definido y el tono es rojo vivo. La copa se mantiene compacta.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "1997cc99_02": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón es alargado y los sépalos están pegados a los pétalos. El tono rojo es oscuro y no se ve el caracol. La forma es más alta que ancha.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "d84ae354_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: la imagen está muy oscura y es difícil distinguir detalles. La forma parece alargada y el botón cerrado. No se observan rasgos de apertura.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "8b300f31_04": {
+     "etapa": "óptimo",
+     "duda": true,
+     "confianza": 0.65,
+     "explicacion": "Describe, no decide: se aprecia una forma de copa con tono rojo vivo. Los pétalos externos parecen separarse pero la imagen es algo borrosa. El caracol no se distingue claramente.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "1997cc99_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: la flor tiene forma de copa tan ancha como alta. El caracol está definido y deja ver el centro. El tono es rojo vivo e intenso, con pétalos externos empezando a separarse.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "96c42e25_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: la flor muestra una copa bien formada con pétalos externos separándose ligeramente. El caracol interno está definido. El tono rojo es vivo y la copa se mantiene.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "0a6ecd17_03": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón es alargado y puntiagudo. Los sépalos están pegados y no hay apertura visible de pétalos. El tono es oscuro.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "d84ae354_06": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: la imagen está borrosa y el botón se ve oscuro. La forma parece alargada pero los detalles no son claros. No se observa apertura.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "53bc3479_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.65,
+     "explicacion": "Describe, no decide: el botón se ve pequeño y oscuro. La forma es alargada y los sépalos parecen pegados. La imagen es algo borrosa pero no muestra apertura.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "35e90145_03": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: la flor tiene forma de copa con sépalos separados hacia afuera. El caracol está definido y el tono es rojo vivo. Los pétalos externos empiezan a abrirse pero la copa se mantiene.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "0a6ecd17_04": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón es alargado y puntiagudo, más alto que ancho. Los sépalos están pegados y no hay apertura visible. El tono es oscuro.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    }
+   }
+  },
+  "8": {
+   "ok": true,
+   "error": null,
+   "wall_s": 34.5,
+   "timeout_usado": 150.0,
+   "tokens_in": 976,
+   "tokens_out": 2262,
+   "ids": [
+    "957ef082_08",
+    "0a6ecd17_02",
+    "6b50d559_01",
+    "10fa5038_03",
+    "d794ae0a_02",
+    "e8d16d5e_03",
+    "c2a14204_02",
+    "957ef082_05",
+    "e8d16d5e_04",
+    "9adb13e4_02",
+    "1997cc99_05",
+    "cb890489_01",
+    "496abf0d_02",
+    "0a6ecd17_01",
+    "53bc3479_03"
+   ],
+   "res": {
+    "957ef082_08": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: el botón floral se ve alargado y más alto que ancho. Los sépalos están pegados a los pétalos y el rojo se ve oscuro, sin caracol visible.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "0a6ecd17_02": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón está muy cerrado y se ve más verde que rojo. Los sépalos cubren casi todo y la forma es claramente alargada.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "6b50d559_01": {
+     "etapa": "óptimo",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: se alcanza a ver una forma de copa con tono rojo vivo y pétalos que empiezan a abrirse. La imagen está muy borrosa y no se distingue bien el caracol, por eso baja la confianza.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "10fa5038_03": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.7,
+     "explicacion": "Describe, no decide: la flor tiene forma de copa, casi tan ancha como alta, con pétalos externos que empiezan a separarse. El tono se ve algo oscuro por el contraluz, pero la estructura indica punto de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "oscuro"
+     }
+    },
+    "d794ae0a_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: el botón se ve oscuro, cerrado y alargado, sin pétalos separados visibles. La imagen está borrosa y a contraluz, lo que genera duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "e8d16d5e_03": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.75,
+     "explicacion": "Describe, no decide: se aprecia el caracol definido en la parte superior con tono rojo vivo. Los sépalos están separados y la copa mantiene su forma, rasgos de punto de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "c2a14204_02": {
+     "etapa": "óptimo",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: el rojo es vivo e intenso y la forma general es de copa. Sin embargo, los pétalos se ven bastante separados y la imagen está borrosa, lo que genera duda entre óptimo y sobreabierto.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "957ef082_05": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.8,
+     "explicacion": "Describe, no decide: el botón es alargado, más alto que ancho, con los sépalos pegados cubriendo casi todo. Apenas se ve algo de pétalo en la punta, señal de inmadurez.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "e8d16d5e_04": {
+     "etapa": "sobreabierto",
+     "duda": true,
+     "confianza": 0.5,
+     "explicacion": "Describe, no decide: la flor se ve muy abierta, más ancha que alta, con pétalos separados y tono apagado. La imagen está muy borrosa y cortada, por lo que la confianza es baja.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "no visible",
+      "forma": "ensanchada",
+      "tono": "apagado"
+     }
+    },
+    "9adb13e4_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: el botón se ve pequeño, oscuro y cerrado, con los sépalos pegados. La imagen es pequeña y borrosa, lo que genera duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "1997cc99_05": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.75,
+     "explicacion": "Describe, no decide: el botón es alargado y los sépalos largos están pegados a los pétalos, que apenas asoman oscuros en la punta. No hay caracol ni apertura visible.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "cb890489_01": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: el botón se ve cerrado y alargado, con sépalos pegados y pétalos oscuros apenas visibles. La imagen está algo borrosa, por eso hay duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "496abf0d_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.5,
+     "explicacion": "Describe, no decide: se ve un botón pequeño, oscuro y aparentemente cerrado. La imagen está muy borrosa y no se distinguen sépalos ni caracol, por lo que la confianza es baja.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "0a6ecd17_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.8,
+     "explicacion": "Describe, no decide: la flor muestra una copa bien formada, casi tan ancha como alta, con el caracol definido dejando ver el centro. Los pétalos externos empiezan a separarse y los sépalos están abiertos, rasgos claros de punto de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "53bc3479_03": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: el botón se ve alargado y cerrado, con sépalos pegados y tono oscuro. Está parcialmente ocluido por hojas, lo que genera duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    }
+   }
+  },
+  "9": {
+   "ok": true,
+   "error": null,
+   "wall_s": 32.6,
+   "timeout_usado": 150.0,
+   "tokens_in": 971,
+   "tokens_out": 2142,
+   "ids": [
+    "f8f95f50_05",
+    "53746c8f_02",
+    "d92d6c99_02",
+    "17e5863c_03",
+    "9adb13e4_04",
+    "f8f95f50_01",
+    "9adb13e4_03",
+    "b6c4e2d5_01",
+    "7a2e4e22_01",
+    "b6c4e2d5_03",
+    "957ef082_10",
+    "957ef082_09",
+    "e10d5436_03",
+    "7a2e4e22_03",
+    "a8cb0a17_03"
+   ],
+   "res": {
+    "f8f95f50_05": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral se ve pequeño y alargado, más alto que ancho. Los sépalos están pegados a los pétalos y el tono rojo es oscuro. No se observa el caracol ni apertura de pétalos.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "53746c8f_02": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: la rosa muestra forma de copa, aproximadamente tan ancha como alta. El caracol interno está definido y deja ver el centro, con tono rojo vivo e intenso. Los pétalos externos empiezan a separarse pero la copa se mantiene.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "d92d6c99_02": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral se ve alargado y cerrado, más alto que ancho. Los sépalos están pegados a los pétalos y apenas se asoma algo de color rojo oscuro en la punta. No hay caracol visible ni apertura.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "17e5863c_03": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral se ve pequeño y alargado, con forma más alta que ancha. Los sépalos están pegados a los pétalos y el tono es oscuro. No se observa caracol ni apertura de pétalos.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "9adb13e4_04": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: la rosa muestra forma de copa, aproximadamente tan ancha como alta. El caracol interno está definido y el tono rojo es vivo e intenso. Los pétalos externos comienzan a separarse pero la copa se mantiene firme.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "f8f95f50_01": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral se ve pequeño, redondeado y cerrado. Los sépalos están pegados a los pétalos y el tono es oscuro. No se observa caracol ni apertura de pétalos.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "9adb13e4_03": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral se ve alargado y puntiagudo, más alto que ancho. Los sépalos están pegados a los pétalos cubriendo casi todo el botón. No se observa caracol ni apertura significativa.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "b6c4e2d5_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: la rosa muestra forma de copa, aproximadamente tan ancha como alta. El caracol interno está definido y se aprecia el centro, con tono rojo vivo. Los pétalos externos empiezan a separarse pero la copa se mantiene.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "7a2e4e22_01": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: el botón floral se ve cerrado y alargado, con sépalos pegados a los pétalos. El tono es oscuro y no se observa caracol. La imagen está algo borrosa, lo que genera duda en la clasificación.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "b6c4e2d5_03": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral se ve pequeño y alargado, más alto que ancho. Los sépalos están pegados a los pétalos y el tono es oscuro. No hay caracol visible ni apertura de pétalos.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "957ef082_10": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral se ve verde y cerrado, con sépalos completamente pegados cubriendo los pétalos. La forma es alargada y no se observa color rojo ni caracol. Es claramente inmaduro.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "957ef082_09": {
+     "etapa": "sobreabierto",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: la rosa muestra pétalos muy separados y una forma ensanchada hacia arriba, perdiendo la forma de copa. El caracol ya no está definido y el tono se ve apagado. La imagen está algo borrosa, lo que genera duda.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "ensanchada",
+      "tono": "apagado"
+     }
+    },
+    "e10d5436_03": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral se ve alargado y cerrado, más alto que ancho. Los sépalos están pegados a los pétalos y el tono es oscuro. No se observa caracol ni apertura de pétalos.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "7a2e4e22_03": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral se ve pequeño y alargado, más alto que ancho. Los sépalos están pegados a los pétalos y el tono es oscuro. No hay caracol visible ni apertura de pétalos.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "a8cb0a17_03": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral se ve alargado y puntiagudo, más alto que ancho. Los sépalos están pegados y se extienden como puntas cubriendo el botón. No se observa caracol ni apertura de pétalos.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    }
+   }
+  },
+  "10": {
+   "ok": true,
+   "error": null,
+   "wall_s": 40.6,
+   "timeout_usado": 150.0,
+   "tokens_in": 1031,
+   "tokens_out": 2699,
+   "ids": [
+    "8deb940a_03",
+    "344edcee_01",
+    "034f04bd_07",
+    "f2c7cfeb_02",
+    "9adb13e4_01",
+    "5ac15b0e_02",
+    "d84ae354_03",
+    "8a6b61b9_02",
+    "5ac15b0e_01",
+    "8a3242ed_06",
+    "e0be4e1b_01",
+    "53746c8f_05",
+    "380c3267_04",
+    "f8f95f50_04"
+   ],
+   "res": {
+    "8deb940a_03": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: La rosa muestra una forma de copa definida, aproximadamente tan ancha como alta. El caracol interno es visible y los pétalos externos comienzan a separarse sin perder la estructura. El tono rojo es vivo e intenso, característico del punto óptimo de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "344edcee_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: La flor presenta sépalos claramente separados y una forma de copa proporcionada. El caracol está definido y el color rojo es intenso. Los pétalos externos muestran la apertura inicial típica del punto de corte óptimo.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "034f04bd_07": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: El botón floral se observa alargado y cerrado, con sépalos pegados a los pétalos. El color es más oscuro y no se aprecia el caracol interno. La imagen es pequeña y con poco detalle, lo que genera duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "f2c7cfeb_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.65,
+     "explicacion": "Describe, no decide: La flor muestra una forma claramente alargada, más alta que ancha, con sépalos pegados. No se observa apertura de pétalos ni el caracol interno. El tono oscuro y la estructura cerrada indican inmadurez.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "9adb13e4_01": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.55,
+     "explicacion": "Describe, no decide: El botón se ve cerrado y alargado, sin signos de apertura en los pétalos. Los sépalos permanecen pegados y el color es oscuro. La imagen es pequeña y borrosa, lo que reduce la confianza en la clasificación.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "5ac15b0e_02": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.8,
+     "explicacion": "Describe, no decide: La rosa muestra sépalos en proceso de separación y una apertura inicial de pétalos. La forma es de copa y el caracol comienza a ser visible. El tono rojo es intenso, indicando el punto óptimo de corte.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "d84ae354_03": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.5,
+     "explicacion": "Describe, no decide: La imagen es muy pequeña y con poco detalle, dificultando la observación de rasgos específicos. El botón parece cerrado y de forma alargada. No se pueden apreciar claramente sépalos ni caracol, lo que genera alta duda.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "8a6b61b9_02": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.75,
+     "explicacion": "Describe, no decide: La flor presenta una forma alargada característica, más alta que ancha. Los sépalos están pegados a los pétalos y no hay apertura visible. El tono oscuro y la estructura cerrada confirman la inmadurez.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "5ac15b0e_01": {
+     "etapa": "sobreabierto",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: La rosa muestra pétalos muy separados y una forma ensanchada, más ancha que alta. Se ha perdido la estructura de copa compacta y el caracol ya no está definido. El grado de apertura excesivo indica que está sobreabierta.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "ensanchada",
+      "tono": "apagado"
+     }
+    },
+    "8a3242ed_06": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.5,
+     "explicacion": "Describe, no decide: La imagen es extremadamente pequeña y no permite observar detalles claros de sépalos o caracol. El botón parece tener forma alargada y estar cerrado. La falta de información visual genera alta duda en la clasificación.",
+     "rasgos": {
+      "sepalos": "no visible",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "e0be4e1b_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: La rosa presenta una forma de copa perfectamente equilibrada con el caracol claramente definido. Los sépalos están separados y los pétalos externos muestran la apertura inicial ideal. El tono rojo es vivo e intenso, característico del punto óptimo.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "53746c8f_05": {
+     "etapa": "óptimo",
+     "duda": true,
+     "confianza": 0.65,
+     "explicacion": "Describe, no decide: La flor muestra una forma de copa con tono rojo vivo y sépalos aparentemente separados. Sin embargo, el tallo ocluye parcialmente la vista y no se aprecia claramente el caracol. La oclusión parcial genera duda moderada.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "380c3267_04": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.8,
+     "explicacion": "Describe, no decide: La rosa presenta una forma de copa definida con el caracol visible y sépalos separados. Aunque el tono rojo es más oscuro de lo habitual, la estructura de apertura es la adecuada. Los pétalos mantienen la forma de copa característica del punto óptimo.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "oscuro"
+     }
+    },
+    "f8f95f50_04": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: El botón floral se observa alargado y cerrado, con sépalos pegados a los pétalos. No hay apertura visible ni se aprecia el caracol interno. La imagen es pequeña, lo que limita la observación de detalles y genera duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    }
+   }
+  },
+  "11": {
+   "ok": true,
+   "error": null,
+   "wall_s": 59.2,
+   "timeout_usado": 150.0,
+   "tokens_in": 1024,
+   "tokens_out": 2363,
+   "ids": [
+    "c7021add_01",
+    "f2c7cfeb_03",
+    "1a2e4759_01",
+    "35e90145_02",
+    "53746c8f_01",
+    "e10d5436_02",
+    "06b3136a_01",
+    "8deb940a_02",
+    "f2c7cfeb_01",
+    "d794ae0a_01",
+    "8b300f31_02",
+    "957ef082_06",
+    "10950076_01",
+    "f2c7cfeb_05"
+   ],
+   "res": {
+    "c7021add_01": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral está cerrado y alargado, más alto que ancho. Los sépalos están pegados a los pétalos y el tono rojo es oscuro. No se ve el caracol ni el centro.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "f2c7cfeb_03": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: el botón es pequeño y muy cerrado, con forma alargada. Los sépalos cubren completamente los pétalos y el color es oscuro. No hay apertura visible.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "1a2e4759_01": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: el botón parece cerrado con sépalos pegados y forma alargada. El tono es oscuro y no se distingue el caracol. La imagen es pequeña y borrosa, lo que genera duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "35e90145_02": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral está cerrado, con forma alargada y sépalos pegados a los pétalos. El tono es oscuro y no se observa apertura ni caracol definido.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "53746c8f_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: la rosa tiene forma de copa, aproximadamente tan ancha como alta. El caracol está definido y se ve el centro. El tono rojo es vivo e intenso, y los pétalos externos empiezan a separarse.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "e10d5436_02": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: la rosa muestra forma de copa con el caracol definido y visible. Los pétalos externos comienzan a separarse pero la copa se mantiene. El tono es rojo vivo.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "06b3136a_01": {
+     "etapa": "sobreabierto",
+     "duda": false,
+     "confianza": 0.8,
+     "explicacion": "Describe, no decide: la rosa tiene los pétalos muy separados y pierde la forma de copa. La forma es más ancha que alta, ensanchada hacia arriba. El tono se ve apagado.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "poco definido",
+      "forma": "ensanchada",
+      "tono": "apagado"
+     }
+    },
+    "8deb940a_02": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral está cerrado y es pequeño, con forma alargada. Los sépalos están pegados y el tono es oscuro. No hay apertura visible.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "f2c7cfeb_01": {
+     "etapa": "óptimo",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: la rosa tiene forma de copa con el caracol definido y visible. El tono rojo es vivo e intenso. Los pétalos externos empiezan a separarse pero la copa se mantiene.",
+     "rasgos": {
+      "sepalos": "separados",
+      "caracol": "definido",
+      "forma": "copa",
+      "tono": "vivo"
+     }
+    },
+    "d794ae0a_01": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.65,
+     "explicacion": "Describe, no decide: el botón floral parece cerrado con forma alargada y sépalos pegados. El tono es muy oscuro y no se distingue el caracol. La imagen está oscura y genera duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "8b300f31_02": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: el botón parece cerrado con sépalos pegados y forma alargada. El tono es oscuro. La imagen es pequeña y borrosa, lo que genera duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "957ef082_06": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.85,
+     "explicacion": "Describe, no decide: el botón floral está cerrado y es pequeño, con forma alargada. Los sépalos están pegados a los pétalos y el tono es oscuro. No hay apertura visible.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "10950076_01": {
+     "etapa": "inmaduro",
+     "duda": false,
+     "confianza": 0.9,
+     "explicacion": "Describe, no decide: el botón floral está muy cerrado, con los sépalos completamente pegados y cubriendo los pétalos. La forma es alargada y no se ve apertura. El tono visible es oscuro.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    },
+    "f2c7cfeb_05": {
+     "etapa": "inmaduro",
+     "duda": true,
+     "confianza": 0.6,
+     "explicacion": "Describe, no decide: el botón parece cerrado con forma alargada y sépalos pegados. El tono es oscuro y no se distingue el caracol. La imagen es muy pequeña y borrosa, lo que genera duda.",
+     "rasgos": {
+      "sepalos": "pegados",
+      "caracol": "no visible",
+      "forma": "alargada",
+      "tono": "oscuro"
+     }
+    }
+   }
+  }
+ }
+}

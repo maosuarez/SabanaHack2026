@@ -218,3 +218,151 @@ def explain_crop(path: str | Path, etapa: str, prob: float, model: str = "kimi-k
     if out.get("ok"):
         out["result"]["explicacion"] = CABECERA_EXPLICACION + out["result"]["explicacion"][:1].lower() + out["result"]["explicacion"][1:]
     return out
+
+
+# ---- Modo EXPLICAR EN LOTE (en vivo): UNA llamada por imagen con todos los recortes. ----
+import base64 as _b64
+import io as _io
+import os as _os
+import threading as _th
+
+MAX_FLORES_LOTE = 16
+LADO_RECORTE = 224
+MIN_GAP_S = 21.0  # límite de la cuenta: 3 solicitudes/min, concurrencia 1
+_GATE = _th.Lock()
+_LAST_CALL = [0.0]
+
+PROMPT_LOTE = """ROL
+Eres un asistente que ayuda a cortadores novatos de rosa de exportación, variedad Freedom (rosa roja). Das una SEGUNDA OPINIÓN independiente: clasificas la etapa de apertura de cada rosa solo con lo que ves. No conoces ninguna otra clasificación.
+
+ENTRADA
+Recibirás {k} recortes, cada uno precedido por "Flor n:". Son vistas desde abajo, a contraluz, en el invernadero.
+
+ETAPAS
+inmaduro (cerrado): la cabeza se ve más pequeña, el rojo es más oscuro, los sépalos están pegados a los pétalos y la forma es alargada (más alta que ancha). No cortar.
+óptimo (PUNTO DE CORTE, el único que se corta): el caracol (espiral de pétalos internos) está definido y deja ver el centro; rojo vivo e intenso; forma de copa, aproximadamente tan ancha como alta; los pétalos externos empiezan a separarse pero la copa se mantiene.
+sobreabierto: pétalos separados, se pierde la forma de copa; más ancha que alta, ensanchada hacia arriba (paralelogramo o trapecio). No cortar.
+
+REGLAS
+- Ningún rasgo decide por sí solo; léelos en conjunto. La forma depende del ángulo de la cámara: no la uses sola.
+- Ante la duda entre óptimo y sobreabierto, o si el recorte está borroso, cortado u ocluido, pon duda=true y baja la confianza. Nunca inventes rasgos que no ves.
+- La explicación: 2-3 frases en español sencillo que justifiquen TU etapa con rasgos visibles (botón floral, pétalos, sépalos, caracol, copa, tono); empieza con "Describe, no decide:".
+
+FORMATO
+Solo JSON estricto: {{"flores": [{{"n": número, "etapa": "inmaduro|óptimo|sobreabierto", "duda": true|false, "confianza": 0-1, "rasgos": {{"sepalos": "pegados|separados|no visible", "caracol": "definido|poco definido|no visible", "forma": "alargada|copa|ensanchada", "tono": "oscuro|vivo|apagado"}}, "motivo": "1 frase", "explicacion": "2-3 frases"}}, ...]}}"""
+
+
+def api_key() -> str | None:
+    if _os.environ.get("KIMI_OFF") == "1":
+        return None
+    k = _os.environ.get("KIMI_API_KEY")
+    if k:
+        return k.strip()
+    try:
+        return load_env_key()
+    except OSError:
+        return None
+
+
+def parse_batch_json(text: str, validos: set[int]) -> dict[int, dict] | None:
+    if not text:
+        return None
+    text = re.sub(r"```(?:json)?", "", text)
+    s, e = text.find("{"), text.rfind("}")
+    if s < 0 or e <= s:
+        return None
+    try:
+        obj = json.loads(text[s : e + 1])
+    except json.JSONDecodeError:
+        return None
+    lst = obj.get("flores") if isinstance(obj, dict) else None
+    if not isinstance(lst, list):
+        return None
+    out: dict[int, dict] = {}
+    for it in lst:
+        if not isinstance(it, dict):
+            continue
+        try:
+            n = int(it.get("n"))
+        except (TypeError, ValueError):
+            continue
+        exp = str(it.get("explicacion", "")).strip() or str(it.get("motivo", "")).strip()
+        et = str(it.get("etapa", "")).strip().lower().replace("ó", "o")
+        mapa = {"inmaduro": "inmaduro", "optimo": "óptimo", "sobreabierto": "sobreabierto"}
+        if n not in validos or not exp or n in out or et not in mapa:
+            continue
+        duda = it.get("duda", False)
+        duda = duda if isinstance(duda, bool) else str(duda).lower() == "true"
+        try:
+            conf = max(0.0, min(1.0, float(it.get("confianza", 0))))
+        except (TypeError, ValueError):
+            conf = 0.0
+        if not exp.lower().startswith("describe, no decide"):
+            exp = CABECERA_EXPLICACION + exp[:1].lower() + exp[1:]
+        r = it.get("rasgos")
+        out[n] = {"etapa": mapa[et], "duda": duda, "confianza": conf, "explicacion": exp,
+                  "rasgos": r if isinstance(r, dict) else {}}
+    return out or None
+
+
+def _shrink(img, side: int = LADO_RECORTE) -> str:
+    im = img.convert("RGB")
+    im.thumbnail((side, side))
+    b = _io.BytesIO()
+    im.save(b, "JPEG", quality=85)
+    return "data:image/jpeg;base64," + _b64.b64encode(b.getvalue()).decode()
+
+
+def explain_batch(items: list[dict], model: str = "kimi-k2.6", base_url: str = DEFAULT_BASE_URL,
+                  timeout: float = 40.0, retries: int = 1) -> dict:
+    """items: [{n, score, img (PIL)}] (la etapa local NO se envía: segunda opinión independiente). Una llamada con todos los recortes (máx 16, los de mayor score).
+    Devuelve {ok, result:{n:{explicacion,rasgos,coherente}}, enviados:[n], latency_s, prompt_tokens, completion_tokens, error}.
+    Espaciado mínimo MIN_GAP_S entre llamadas (compartido por todo el proceso); reintenta ante 429/5xx."""
+    key = api_key()
+    out: dict = {"ok": False, "result": None, "error": None, "latency_s": None, "prompt_tokens": 0,
+                 "completion_tokens": 0, "enviados": []}
+    if not key:
+        out["error"] = "sin clave"
+        return out
+    sel = sorted(items, key=lambda i: -i.get("score", 0))[:MAX_FLORES_LOTE]
+    sel.sort(key=lambda i: i["n"])
+    if not sel:
+        out["error"] = "sin flores"
+        return out
+    out["enviados"] = [i["n"] for i in sel]
+    content: list = []
+    for i in sel:
+        content.append({"type": "text", "text": f"Flor {i['n']}:"})
+        content.append({"type": "image_url", "image_url": {"url": _shrink(i["img"])}})
+    content.append({"type": "text", "text": PROMPT_LOTE.format(k=len(sel))})
+    body = json.dumps({"model": model, "messages": [{"role": "user", "content": content}],
+                       "thinking": {"type": "disabled"}}).encode()
+    validos = set(out["enviados"])
+    t_ini = time.time()
+    for attempt in range(retries + 1):
+        with _GATE:  # concurrencia 1 y espaciado entre llamadas
+            wait = MIN_GAP_S - (time.time() - _LAST_CALL[0])
+            if wait > 0:
+                time.sleep(wait)
+            _LAST_CALL[0] = time.time()
+            req = urllib.request.Request(base_url.rstrip("/") + "/chat/completions", data=body,
+                                         headers={"Content-Type": "application/json", "Authorization": f"Bearer {key}"})
+            try:
+                with urllib.request.urlopen(req, timeout=timeout) as r:
+                    data = json.loads(r.read())
+                u = data.get("usage", {})
+                out["prompt_tokens"] += u.get("prompt_tokens") or 0
+                out["completion_tokens"] += u.get("completion_tokens") or 0
+                res = parse_batch_json(data["choices"][0]["message"].get("content") or "", validos)
+                if res:
+                    out.update(ok=True, result=res, error=None, latency_s=round(time.time() - t_ini, 2))
+                    return out
+                out["error"] = "JSON inválido"
+            except urllib.error.HTTPError as e:
+                out["error"] = f"HTTP {e.code}"  # sin cuerpo: nunca se vuelca nada sensible
+                if e.code not in (429, 500, 502, 503, 504):
+                    break
+            except Exception as e:
+                out["error"] = f"{type(e).__name__}"[:80]
+    out["latency_s"] = round(time.time() - t_ini, 2)
+    return out
