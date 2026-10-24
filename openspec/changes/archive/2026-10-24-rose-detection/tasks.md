@@ -3,7 +3,7 @@
 ## 1. Preparación
 
 - [x] 1.1 Generar el split por md5 a partir de `data/annotations/flowers.csv` y guardar la lista de md5 de prueba fuera de `data/raw/`. Responsable posible: persona de datos. Verificar: ningún md5 está en ambos lados y el conteo de imágenes y flores por lado queda en el chat.
-- [ ] 1.2 Etiquetar a mano las condiciones de cada imagen de prueba (contraluz, pequeñas, oclusión, varias rosas). Responsable posible: persona de datos. Verificar: tabla con el número de imágenes por condición.
+- [x] 1.2 Etiquetar a mano las condiciones de cada imagen de prueba (contraluz, pequeñas, oclusión, varias rosas). Responsable posible: persona de datos. Verificar: tabla con el número de imágenes por condición. **Hecha:** `data/processed/detection/test_conditions.json` y `by_condition_test` en `results_test.json` (contraluz 8, pequeñas 6, oclusión 5, varias rosas 5 de 11).
 - [x] 1.3 Escribir el evaluador: recall a IoU 0.5, cajas falsas por imagen y mAP si aplica, con la regla de "no anotable" elegida. Responsable posible: persona de modelo. Verificar: prueba con cajas de referencia como predicción da recall 1 y 0 falsas.
 - [x] 1.4 Confirmar licencias de OWLv2, Grounding DINO y del YOLO candidato en sus repositorios oficiales. Responsable posible: usuario. Verificar: licencias y enlaces al LICENSE en el chat; si es Ultralytics, anotar AGPL-3.0.
 
@@ -17,7 +17,7 @@
 
 - [x] 3.1 Afinar un YOLO pequeño en Colab con las cajas de los md5 de entrenamiento y aumentación solo en entrenamiento. Responsable posible: persona de modelo. Verificar: curva de entrenamiento y que ningún md5 de prueba se usó. **Hecha con RT-DETR r50vd (Apache-2.0) en vez de YOLO, por la licencia; CPU, 640 px, lote 4, 60 épocas, mejor época 20.**
 - [x] 3.2 Evaluar el YOLO en el test y guardar predicciones. Responsable posible: persona de modelo. Verificar: mismas métricas que 2.1 y 2.2. **Resultado: recall 0,79, 0,82 falsas por imagen, AP 0,92 (11 imágenes de test).**
-- [ ] 3.3 (Opcional) Probar un híbrido si sobra tiempo. Responsable posible: persona de modelo. Verificar: mismas métricas o marcado como no medido.
+- [ ] 3.3 (Opcional) Probar un híbrido si sobra tiempo. Responsable posible: persona de modelo. Verificar: mismas métricas o marcado como no medido. **Opcional, no medido (híbrido no probado).**
 
 ## 4. Velocidad y elección
 
