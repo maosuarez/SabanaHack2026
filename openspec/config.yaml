@@ -1,0 +1,73 @@
+schema: spec-driven
+
+context: |
+  Language: es
+  All artifacts must be written in es.
+  Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+
+  Proyecto: Punto de Corte XR (Sabana Hack 2026). Hackathon de 20 horas, 5 personas.
+  Ayuda a cortadores novatos de rosa de exportación (variedad Freedom) a decidir el
+  punto de corte. Un núcleo de visión detecta cada rosa, estima su punto de apertura
+  y explica el porqué. Contexto completo en context.md y docs/.
+
+  Stack:
+  - Percepción: Python, servicio de inferencia con FastAPI. Modelo por definir.
+  - Cliente XR: Meta Quest 3, Unity + Meta XR SDK + MRUK (PassthroughCameraAccess).
+    Requiere Horizon OS v74+ y permiso horizonos.permission.HEADSET_CAMERA.
+  - Respaldo de demo: el mismo modelo en un portátil con webcam.
+  - Robot (concepto / prototipo mínimo opcional): cámara sobre riel lineal
+    (Arduino + motor paso a paso) que consume el mismo servicio.
+
+  Arquitectura:
+  - `percepción` (núcleo, sin interfaz): un frame entra; detecta las rosas, clasifica
+    cada una (inmaduro / óptimo / sobreabierto / zona gris) y calcula la confianza;
+    devuelve rasgos que explican la decisión (sépalos, caracol, tamaño de cabeza, tono).
+  - `clientes`: Quest, portátil y robot. Todos consumen el mismo contrato.
+  - Contrato por rosa: {bbox, clase, confianza, rasgos[], explicacion}.
+  - Modos: Entrenar (la persona decide y luego el sistema revela su lectura) y
+    Asistir (el sistema confirma o advierte en campo).
+
+  Restricciones:
+  - El sistema no da órdenes ciegas: siempre muestra confianza y porqué. "Zona gris
+    -> consulta" es una salida válida.
+  - Dataset: 56 imágenes únicas, una variedad, etiquetado por imagen (no por flor),
+    varias rosas por foto, casi sin flores sobreabiertas. Clasificar la imagen
+    completa no sirve: se necesita detección más clasificación por flor.
+    No prometer generalización.
+  - La demo se evalúa en vivo con casos desconocidos: priorizar robustez sobre
+    funciones nuevas. Ante duda de alcance gana lo que deja la demo funcionando.
+  - La VR inmersiva completa (invernadero 3D) queda fuera del alcance base.
+  - La parte robótica debe quedar visible en la arquitectura y en el pitch.
+
+  Convenciones:
+  - Código e identificadores en inglés; comentarios y documentación en español.
+  - Python tipado, ruff, uv o pip, sin notebooks en el flujo final.
+  - data/raw/ es de solo lectura (imágenes y labels_imagen.csv). Lo derivado va en
+    data/annotations/, data/processed/ y outputs/.
+  - No crear archivos .md fuera de openspec/; las aclaraciones van en el chat.
+  - Decisiones pendientes y riesgos en docs/decisiones-y-riesgos.md; actualizarlo
+    cuando cambie una decisión.
+
+rules:
+  proposal:
+    - Indicar cómo el cambio afecta la demo mínima estable y qué queda fuera del alcance
+    - Justificar el cambio frente a la ventana de 20 horas; preferir lo más pequeño que funcione
+    - Si depende de una decisión pendiente en docs/decisiones-y-riesgos.md, señalarlo y preguntar
+  specs:
+    - Los requisitos de visión deben exponer confianza y rasgos explicativos, nunca solo una clase
+    - Respetar el contrato por rosa {bbox, clase, confianza, rasgos[], explicacion}
+  design:
+    - Mantener el núcleo de percepción independiente de la interfaz (Quest, portátil, robot)
+    - Documentar el respaldo con portátil y webcam cuando el cambio toque el cliente Quest
+  tasks:
+    - Dividir en tareas de máximo 2 horas con un responsable posible
+    - Incluir una tarea de evidencia por prototipo (qué se probó, métricas y límites observados)
+
+operations:
+  apply:
+    guidance:
+      - No modificar, mover ni renombrar data/raw/ ni los videos
+      - Reportar la evidencia en el chat al terminar un prototipo
+  archive:
+    guidance:
+      - Resumir el resultado del archivo y actualizar docs/decisiones-y-riesgos.md si cambió una decisión
