@@ -21,12 +21,12 @@
 
 ## 4. Velocidad y elección
 
-- [ ] 4.1 Medir la latencia en CPU de cada candidato en el portátil de la demo, en frío y en caliente. Responsable posible: persona de integración. Verificar: tabla con tiempo por frame y tamaño de entrada.
-- [ ] 4.2 Armar la tabla comparativa y el desglose por condición. Responsable posible: persona de modelo. Verificar: una fila por candidato sobre los mismos md5 y conteo por condición.
-- [ ] 4.3 Elegir el modelo base por la métrica medida y proponer el umbral mínimo con la medición. Responsable posible: usuario. Verificar: elección justificada frente a cada alternativa y umbral propuesto pendiente de confirmación.
+- [ ] 4.1 Medir la latencia en CPU de cada candidato en el portátil de la demo, en frío y en caliente. Responsable posible: persona de integración. Verificar: tabla con tiempo por frame y tamaño de entrada. **Cerrada sin hacer como se describe:** el portátil de la demo ya no aplica (decisión 9). Dato de esta máquina (CPU, 8 hilos): RT-DETR 1,4 s de media y 0,68 s de mediana, 3,1 s la primera imagen en frío; Grounding DINO 5,9 s; OWLv2 7,8 s.
+- [x] 4.2 Armar la tabla comparativa y el desglose por condición. Responsable posible: persona de modelo. Verificar: una fila por candidato sobre los mismos md5 y conteo por condición.
+- [x] 4.3 Elegir el modelo base por la métrica medida y proponer el umbral mínimo con la medición. Responsable posible: usuario. Verificar: elección justificada frente a cada alternativa y umbral propuesto pendiente de confirmación. **Elegido: RT-DETR r50vd; umbral 0,48 propuesto, pendiente de confirmación del usuario.**
 
 ## 5. Evidencia y documentación
 
-- [ ] 5.1 Informe con resultados en el chat: qué se probó, tabla de métricas, desempeño por condición, límites (test pequeño, una variedad, un anotador), licencias, riesgo AGPL si aplica y modelo elegido. Responsable posible: usuario. Verificar: mensaje con todas las partes y cifras que coincidan con los archivos de resultados.
-- [ ] 5.2 Confirmar que `data/raw/` no cambió. Responsable posible: usuario. Verificar: `git status` y `git diff --stat -- data/raw` vacíos.
-- [ ] 5.3 Actualizar `docs/decisiones-y-riesgos.md` con el modelo elegido, la licencia y el estado del umbral. Responsable posible: usuario. Verificar: revisar el diff y confirmar que no se crean archivos `.md` nuevos.
+- [x] 5.1 Informe con resultados en el chat: qué se probó, tabla de métricas, desempeño por condición, límites (test pequeño, una variedad, un anotador), licencias, riesgo AGPL si aplica y modelo elegido. Responsable posible: usuario. Verificar: mensaje con todas las partes y cifras que coincidan con los archivos de resultados.
+- [x] 5.2 Confirmar que `data/raw/` no cambió. Responsable posible: usuario. Verificar: `git status` y `git diff --stat -- data/raw` vacíos.
+- [x] 5.3 Actualizar `docs/decisiones-y-riesgos.md` con el modelo elegido, la licencia y el estado del umbral. Responsable posible: usuario. Verificar: revisar el diff y confirmar que no se crean archivos `.md` nuevos.
