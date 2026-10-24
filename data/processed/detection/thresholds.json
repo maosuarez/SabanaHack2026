@@ -10,5 +10,11 @@
   "criterion": "max F1 @IoU0.5 sobre imagenes de train",
   "train_f1": 0.6390977443609023,
   "n_train_images": 45
+ },
+ "rtdetr": {
+  "threshold": 0.48020240664482117,
+  "criterion": "max F1 @IoU0.5 sobre la validacion interna (no vista en entrenamiento)",
+  "train_f1": 0.7142857142857142,
+  "n_train_images": 9
  }
 }

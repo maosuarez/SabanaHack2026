@@ -15,8 +15,8 @@
 
 ## 3. Candidato afinado
 
-- [ ] 3.1 Afinar un YOLO pequeño en Colab con las cajas de los md5 de entrenamiento y aumentación solo en entrenamiento. Responsable posible: persona de modelo. Verificar: curva de entrenamiento y que ningún md5 de prueba se usó.
-- [ ] 3.2 Evaluar el YOLO en el test y guardar predicciones. Responsable posible: persona de modelo. Verificar: mismas métricas que 2.1 y 2.2.
+- [x] 3.1 Afinar un YOLO pequeño en Colab con las cajas de los md5 de entrenamiento y aumentación solo en entrenamiento. Responsable posible: persona de modelo. Verificar: curva de entrenamiento y que ningún md5 de prueba se usó. **Hecha con RT-DETR r50vd (Apache-2.0) en vez de YOLO, por la licencia; CPU, 640 px, lote 4, 60 épocas, mejor época 20.**
+- [x] 3.2 Evaluar el YOLO en el test y guardar predicciones. Responsable posible: persona de modelo. Verificar: mismas métricas que 2.1 y 2.2. **Resultado: recall 0,79, 0,82 falsas por imagen, AP 0,92 (11 imágenes de test).**
 - [ ] 3.3 (Opcional) Probar un híbrido si sobra tiempo. Responsable posible: persona de modelo. Verificar: mismas métricas o marcado como no medido.
 
 ## 4. Velocidad y elección
