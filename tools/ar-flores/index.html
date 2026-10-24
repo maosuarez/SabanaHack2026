@@ -111,6 +111,7 @@ const CUT = {
 CUT.senalModelo = qs.get('senal') === 'modelo';   // ?senal=modelo: cajas y marcos con el color de la predicción del modelo simulado (comportamiento anterior)
 CUT.visual3 = qs.get('visual') !== 'suave';
 CUT.pistas = qs.get('pistas') === '1';          // ?pistas=1: en Entrenar se ven cajas, estados, confianza y la PISTA antes de decidir
+CUT.botones = qs.get('botones') === 'todos' || (CUT.completo && qs.get('botones') !== 'min') ? 'todos' : 'min';   // min: solo INICIAR/PAUSAR/REANUDAR y SALIR en el tablero; ?botones=todos (o ?completo=1) los devuelve
 const sinPistas = () => S.mode === 'play' && !CUT.pistas;       // ?visual=suave: forma y brillo continuos de antes, sin exagerar las diferencias
 const ESTADO_COL = { punto: '#17c45a', cuadrado: '#2b7fff', sobreabierto: '#ff8a1f' };
 const ESTADO_TXT = { punto: 'punto', cuadrado: 'cuadrado (cerrado)', sobreabierto: 'sobreabierto' };
@@ -782,6 +783,11 @@ function drawPanel() {
   row([['uim', 'TEXTO −'], ['uip', 'TEXTO +'], ['voice', 'VOZ: ' + (S.voice ? 'SÍ' : 'NO'), { on: S.voice }],
     ['gaze', 'VISTA: ' + (S.gaze ? 'SÍ' : 'NO'), { on: S.gaze }], ['seat', S.seated ? 'SENTADO' : 'DE PIE', { on: S.seated }]], 845, 118);
   row([['back', '◀ ATRÁS 2 m'], ['fwd', 'ADELANTE 2 m ▶'], ['det', 'DETECCIÓN: ' + (S.det ? 'SÍ' : 'NO'), { on: S.det }], ['dbg', 'DEPURAR: ' + (S.debug ? 'SÍ' : 'NO'), { on: S.debug }]], 985, 118);
+  if (CUT.botones !== 'todos') {   // tablero mínimo: un botón de estado y salir
+    buttons = [];
+    const st = S.mode === 'play' ? ['estado', 'PAUSAR', { primary: 1, icon: 'pause' }] : S.mode === 'paused' ? ['estado', 'REANUDAR', { primary: 1, icon: 'play' }] : ['estado', 'INICIAR', { primary: 1, icon: 'play' }];
+    row([st, ['exit', 'SALIR', { icon: 'exit' }]], 690, 130);
+  }
   for (const b of buttons) {
     const hov = uiHover === b.id;
     c.fillStyle = b.primary === 2 ? '#ffb4b4' : b.primary ? '#2fe07a' : b.on ? '#c8f7c5' : '#f4f4f4';
@@ -886,6 +892,10 @@ function press(id, via) {
   sfx.click(); if (via >= 0) buzz(via, .3, 40);
   switch (id) {
     case 'train': startTrain(); break;
+    case 'estado':   // Iniciar → Pausar → Reanudar. Pausa: congela el tiempo y deshabilita elegir botones y cortar
+      if (S.mode === 'play' || S.mode === 'paused') { S.mode = S.mode === 'paused' ? 'play' : 'paused'; speak(S.mode === 'paused' ? 'Pausa' : 'Continuamos'); }
+      else startTrain();
+      break;
     case 'cut': decide(true, via); break;
     case 'nocut': decide(false, via); break;
     case 'pause': if (S.mode === 'play' || S.mode === 'paused') { S.mode = S.mode === 'paused' ? 'play' : 'paused'; speak(S.mode === 'paused' ? 'Pausa' : 'Continuamos'); } break;
@@ -1002,7 +1012,7 @@ function activate(key, via) {
   if (!key) return;
   const now = performance.now();
   if (now - (activate.t || 0) < 350) return; activate.t = now;
-  if (key[0] === 'f') { if (!cutSess) selectBud(buds[+key.slice(2)], via); }   // con un corte en curso no se elige otro botón
+  if (key[0] === 'f') { if (!cutSess && S.mode !== 'paused') selectBud(buds[+key.slice(2)], via); }   // con un corte en curso o en pausa no se elige otro botón
   else if (key[0] === 'k') cutPress(key.slice(2), via);
   else press(key.slice(2), via);
 }
@@ -1583,7 +1593,7 @@ function cutPress(id, via) {
     case 'cal': if (s && !s.cal) s.cal = { mm: s.b.diam, ok: s.b.diam >= CUT.calibreMin }; break;
     case 'desn': if (s) for (const l of targetLeaves(s)) if (l.state === 'intacta') { l.bend = l.max = 40; leafPose(l); leafState(l, 'desnucada'); } break;
     case 'tinta': if (s && s.cut) { s.ink = 1; inkFace(s); } break;
-    case 'dep': if (s) cutFinish(); break;
+    case 'dep': if (s && S.mode !== 'paused') cutFinish(); break;
   }
   cutDirty = true;
 }
@@ -1684,6 +1694,7 @@ function cutDesk(s) {
 addEventListener('keydown', e => {
   if (e.target && e.target.tagName === 'INPUT') return;
   const k = e.key.toLowerCase(), s = cutSess;
+  if (S.mode === 'paused') return;   // en pausa no se corta ni se deposita
   if (k === 'k') cutPress('on', -1);
   else if (k === 'l') { if (CUT.ver.niveles) cutPress('nivel', -1); }
   else if (k === 'u') { if (CUT.ver.tarjetas) cutPress(cutCard >= 0 ? 'next' : 'cards', -1); }
@@ -2036,7 +2047,7 @@ if (qs.get('ov') === '0') ov.style.display = 'none';
 if (qs.get('train') === '1') startTrain();
 if (qs.get('stats') === '1') setTimeout(() => console.log('STATS ' + JSON.stringify({ ...renderer.info.render, geometries: renderer.info.memory.geometries, buds: buds.length, dets: dets.length })), 4000);
 window.__game = { S, DATA, buds, bins, dets, layout, press, selectBud, decide, startTrain, exportCapture, camera, mouse, renderer, scene };
-Object.assign(window.__game, { budReady, estado3, signalCol, ESTADO_COL });
+Object.assign(window.__game, { budReady, estado3, signalCol, ESTADO_COL, tablero: () => buttons.map(b => b.id + ':' + b.label), tarjetaBotones: () => cutCardMesh.visible ? cutBtns.map(b => b.id) : [] });
 Object.assign(window.__game, { pistasDebug: () => ({ xrFrames: xrFrames.count, callout: callout.visible, hintRing: hintRing.visible, fbRing: fbRing.visible, icono: iconMesh.visible,
   carros: (basket.visible ? 1 : 0) + (infra.visible && infra.userData.carroEstatico.visible ? 1 : 0), carroEstaticoZ: (() => { const m = new THREE.Matrix4(); infra.userData.carroEstatico.getMatrixAt(0, m); return m.elements[14]; })() }) });
 Object.assign(window.__game, { CUT, cutPress, cutDo, cutFinish, cutLog, cutState: () => cutSess,
