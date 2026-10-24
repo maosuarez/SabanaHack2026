@@ -1,0 +1,215 @@
+{
+ "modelo": "kimi-k2.6",
+ "n_ok": 3,
+ "n_total": 3,
+ "json_valido": 1.0,
+ "latencia_media_s": 3.21,
+ "tokens_total": 2410,
+ "accuracy": 0.667,
+ "vlm": {
+  "inmaduro": {
+   "precision": 0.67,
+   "recall": 1.0,
+   "f1": 0.8,
+   "n": 2
+  },
+  "optimo": {
+   "precision": 0,
+   "recall": 0.0,
+   "f1": 0,
+   "n": 1
+  },
+  "sobreabierto": {
+   "precision": 0,
+   "recall": 0,
+   "f1": 0,
+   "n": 0
+  },
+  "f1_macro": 0.267
+ },
+ "matriz_vlm_filas_real": [
+  [
+   2,
+   0,
+   0
+  ],
+  [
+   1,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0
+  ]
+ ],
+ "acuerdo_pool_OOF": {
+  "n": 3,
+  "solo_local": {
+   "n_apto": 0,
+   "precision_apto": null,
+   "ic95": [
+    null,
+    null
+   ],
+   "cobertura_optimos": "0/1",
+   "inmaduros_colados": 0,
+   "sobreabiertos_colados": 0
+  },
+  "regla_acuerdo_con_duda": {
+   "n_apto": 0,
+   "precision_apto": null,
+   "ic95": [
+    null,
+    null
+   ],
+   "cobertura_optimos": "0/1",
+   "inmaduros_colados": 0,
+   "sobreabiertos_colados": 0
+  },
+  "regla_acuerdo_sin_duda": {
+   "n_apto": 0,
+   "precision_apto": null,
+   "ic95": [
+    null,
+    null
+   ],
+   "cobertura_optimos": "0/1",
+   "inmaduros_colados": 0,
+   "sobreabiertos_colados": 0
+  },
+  "exactitud_local_si_coinciden": {
+   "k": 2,
+   "n": 3,
+   "p": 0.67,
+   "ic95": [
+    0.21,
+    0.94
+   ]
+  },
+  "exactitud_local_si_discrepan": {
+   "k": 0,
+   "n": 0,
+   "p": null,
+   "ic95": [
+    null,
+    null
+   ]
+  },
+  "tabla_local_x_vlm_x_real[inm,opt,sob]": {
+   "local=inmaduro|vlm=inmaduro": [
+    2,
+    1,
+    0
+   ]
+  },
+  "vlm_duda_n": 0,
+  "no_apto_acuerdo_inmaduro": {
+   "n": 3,
+   "inmaduro_real": 2
+  }
+ },
+ "acuerdo_test": {
+  "n": 0,
+  "solo_local": {
+   "n_apto": 0,
+   "precision_apto": null,
+   "ic95": [
+    null,
+    null
+   ],
+   "cobertura_optimos": "0/0",
+   "inmaduros_colados": 0,
+   "sobreabiertos_colados": 0
+  },
+  "regla_acuerdo_con_duda": {
+   "n_apto": 0,
+   "precision_apto": null,
+   "ic95": [
+    null,
+    null
+   ],
+   "cobertura_optimos": "0/0",
+   "inmaduros_colados": 0,
+   "sobreabiertos_colados": 0
+  },
+  "regla_acuerdo_sin_duda": {
+   "n_apto": 0,
+   "precision_apto": null,
+   "ic95": [
+    null,
+    null
+   ],
+   "cobertura_optimos": "0/0",
+   "inmaduros_colados": 0,
+   "sobreabiertos_colados": 0
+  },
+  "exactitud_local_si_coinciden": {
+   "k": 0,
+   "n": 0,
+   "p": null,
+   "ic95": [
+    null,
+    null
+   ]
+  },
+  "exactitud_local_si_discrepan": {
+   "k": 0,
+   "n": 0,
+   "p": null,
+   "ic95": [
+    null,
+    null
+   ]
+  },
+  "tabla_local_x_vlm_x_real[inm,opt,sob]": {},
+  "vlm_duda_n": 0,
+  "no_apto_acuerdo_inmaduro": {
+   "n": 0,
+   "inmaduro_real": 0
+  }
+ },
+ "vlm_test": {
+  "inmaduro": {
+   "precision": 0,
+   "recall": 0,
+   "f1": 0,
+   "n": 0
+  },
+  "optimo": {
+   "precision": 0,
+   "recall": 0,
+   "f1": 0,
+   "n": 0
+  },
+  "sobreabierto": {
+   "precision": 0,
+   "recall": 0,
+   "f1": 0,
+   "n": 0
+  },
+  "f1_macro": 0.0
+ },
+ "vlm_pool": {
+  "inmaduro": {
+   "precision": 0.67,
+   "recall": 1.0,
+   "f1": 0.8,
+   "n": 2
+  },
+  "optimo": {
+   "precision": 0,
+   "recall": 0.0,
+   "f1": 0,
+   "n": 1
+  },
+  "sobreabierto": {
+   "precision": 0,
+   "recall": 0,
+   "f1": 0,
+   "n": 0
+  },
+  "f1_macro": 0.267
+ }
+}

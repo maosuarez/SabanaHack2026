@@ -1,0 +1,202 @@
+{
+ "rosa_18#1": {
+  "imagen": "rosa_18",
+  "n": 1,
+  "ok": true,
+  "etapa_local": "optimo",
+  "confianza": 0.855,
+  "explicacion": "Describe, no decide: el botón floral tiene forma de copa redondeada, más ancha que alta, con tono rojo vivo e intenso. Los sépalos verdes ya se separan claramente del cuerpo floral, dejando entrever que el caracol está definido en su interior.",
+  "rasgos": {
+   "sepalos": "separados",
+   "caracol": "definido",
+   "forma": "copa",
+   "tono": "vivo"
+  },
+  "coherente": true,
+  "modelo": "kimi-k2.6",
+  "prompt_tokens": 565,
+  "completion_tokens": 136,
+  "error": null,
+  "fecha": "2026-10-24T11:39:38"
+ },
+ "rosa_18#2": {
+  "imagen": "rosa_18",
+  "n": 2,
+  "ok": true,
+  "etapa_local": "optimo",
+  "confianza": 0.913,
+  "explicacion": "Describe, no decide: la flor muestra una forma de copa bien formada, no alargada ni ensanchada. El tono rojo es vivo e intenso, característico del punto de corte. Los sépalos ya se separan claramente del capullo, indicando madurez adecuada para corte.",
+  "rasgos": {
+   "sepalos": "separados",
+   "caracol": "no visible",
+   "forma": "copa",
+   "tono": "vivo"
+  },
+  "coherente": true,
+  "modelo": "kimi-k2.6",
+  "prompt_tokens": 534,
+  "completion_tokens": 140,
+  "error": null,
+  "fecha": "2026-10-24T11:40:02"
+ },
+ "rosa_18#3": {
+  "imagen": "rosa_18",
+  "n": 3,
+  "ok": true,
+  "etapa_local": "optimo",
+  "confianza": 0.68,
+  "explicacion": "Describe, no decide: la flor muestra una forma de copa con los sépalos ya separados del capullo, lo que indica madurez adecuada. El tono rojo se ve intenso y vivo, característico del punto de corte óptimo. Aunque el caracol no es claramente visible por el ángulo y contraluz, la estructura general respalda la etapa asignada.",
+  "rasgos": {
+   "sepalos": "separados",
+   "caracol": "no visible",
+   "forma": "copa",
+   "tono": "vivo"
+  },
+  "coherente": true,
+  "modelo": "kimi-k2.6",
+  "prompt_tokens": 540,
+  "completion_tokens": 165,
+  "error": null,
+  "fecha": "2026-10-24T11:40:27"
+ },
+ "rosa_37#1": {
+  "imagen": "rosa_37",
+  "n": 1,
+  "ok": true,
+  "etapa_local": "optimo",
+  "confianza": 0.558,
+  "explicacion": "Describe, no decide: la forma de copa ya se distingue con el botón más ancho que alto, no alargado. El tono rojo se ve vivo e intenso, no oscuro como el de un inmaduro. Los sépalos comienzan a separarse del cuerpo floral, dejando entrever que el caracol está alcanzando su definición.",
+  "rasgos": {
+   "sepalos": "separados",
+   "caracol": "definido",
+   "forma": "copa",
+   "tono": "vivo"
+  },
+  "coherente": true,
+  "modelo": "kimi-k2.6",
+  "prompt_tokens": 532,
+  "completion_tokens": 142,
+  "error": null,
+  "fecha": "2026-10-24T11:40:51"
+ },
+ "rosa_37#2": {
+  "imagen": "rosa_37",
+  "n": 2,
+  "ok": true,
+  "etapa_local": "optimo",
+  "confianza": 0.615,
+  "explicacion": "Describe, no decide: la flor muestra una forma de copa clara, con el tono rojo vivo e intenso que caracteriza el punto de corte. Los sépalos ya se separan visiblemente de los pétalos, y se puede apreciar que el caracol está definido dejando entrever el centro de la flor.",
+  "rasgos": {
+   "sepalos": "separados",
+   "caracol": "definido",
+   "forma": "copa",
+   "tono": "vivo"
+  },
+  "coherente": true,
+  "modelo": "kimi-k2.6",
+  "prompt_tokens": 536,
+  "completion_tokens": 144,
+  "error": null,
+  "fecha": "2026-10-24T11:41:16"
+ },
+ "rosa_37#3": {
+  "imagen": "rosa_37",
+  "n": 3,
+  "ok": true,
+  "etapa_local": "inmaduro",
+  "confianza": 0.626,
+  "explicacion": "Describe, no decide: el botón floral se ve alargado y estrecho, más alto que ancho, sin forma de copa. Los sépalos están pegados a los pétalos y no se distingue el caracol ni el centro de la flor. El tono rojo se percibe oscuro y apagado, no vivo e intenso.",
+  "rasgos": {
+   "sepalos": "pegados",
+   "caracol": "no visible",
+   "forma": "alargada",
+   "tono": "oscuro"
+  },
+  "coherente": true,
+  "modelo": "kimi-k2.6",
+  "prompt_tokens": 530,
+  "completion_tokens": 136,
+  "error": null,
+  "fecha": "2026-10-24T11:41:40"
+ },
+ "rosa_37#4": {
+  "imagen": "rosa_37",
+  "n": 4,
+  "ok": true,
+  "etapa_local": "inmaduro",
+  "confianza": 0.966,
+  "explicacion": "Describe, no decide: la imagen muestra un botón floral pequeño y alargado, con forma más alta que ancha. Los sépalos están pegados a los pétalos sin separarse, y el tono rojo se ve oscuro. No se distingue el caracol ni la forma de copa propia del punto de corte.",
+  "rasgos": {
+   "sepalos": "pegados",
+   "caracol": "no visible",
+   "forma": "alargada",
+   "tono": "oscuro"
+  },
+  "coherente": true,
+  "modelo": "kimi-k2.6",
+  "prompt_tokens": 518,
+  "completion_tokens": 134,
+  "error": null,
+  "fecha": "2026-10-24T11:42:04"
+ },
+ "rosa_37#5": {
+  "imagen": "rosa_37",
+  "n": 5,
+  "ok": true,
+  "etapa_local": "inmaduro",
+  "confianza": 0.964,
+  "explicacion": "Describe, no decide: el botón floral se ve alargado, más alto que ancho, con forma puntiaguda típica de capullo cerrado. Los sépalos están pegados a los pétalos sin separarse, y no se distingue el caracol de pétalos internos ni el centro de la flor. El tono rojo se ve oscuro y uniforme, sin el brillo vivo de la etapa óptima.",
+  "rasgos": {
+   "sepalos": "pegados",
+   "caracol": "no visible",
+   "forma": "alargada",
+   "tono": "oscuro"
+  },
+  "coherente": true,
+  "modelo": "kimi-k2.6",
+  "prompt_tokens": 520,
+  "completion_tokens": 155,
+  "error": null,
+  "fecha": "2026-10-24T11:42:28"
+ },
+ "rosa_61#1": {
+  "imagen": "rosa_61",
+  "n": 1,
+  "ok": true,
+  "etapa_local": "optimo",
+  "confianza": 0.89,
+  "explicacion": "Describe, no decide: la forma del botón floral muestra una copa bien definida, más ancha que alta, lo cual es característico del punto de corte. El tono rojo es vivo e intenso, no oscuro como el de un botón inmaduro. Los sépalos se observan separándose del cuerpo floral, indicando que el caracol interno ya está formado y listo para abrirse en transporte.",
+  "rasgos": {
+   "sepalos": "separados",
+   "caracol": "definido",
+   "forma": "copa",
+   "tono": "vivo"
+  },
+  "coherente": true,
+  "modelo": "kimi-k2.6",
+  "prompt_tokens": 546,
+  "completion_tokens": 168,
+  "error": null,
+  "fecha": "2026-10-24T11:42:53"
+ },
+ "rosa_61#2": {
+  "imagen": "rosa_61",
+  "n": 2,
+  "ok": true,
+  "etapa_local": "optimo",
+  "confianza": 0.566,
+  "explicacion": "Describe, no decide: la forma de copa ya se distingue con los pétalos formando una curva abierta hacia arriba. El caracol se ve definido en el centro con la espiral de pétalos internos visible a contraluz. Los sépalos comienzan a separarse del cuerpo de la flor, dejando entrever el rojo vivo del capullo.",
+  "rasgos": {
+   "sepalos": "separados",
+   "caracol": "definido",
+   "forma": "copa",
+   "tono": "vivo"
+  },
+  "coherente": true,
+  "modelo": "kimi-k2.6",
+  "prompt_tokens": 520,
+  "completion_tokens": 146,
+  "error": null,
+  "fecha": "2026-10-24T11:43:17"
+ }
+}

@@ -2,13 +2,13 @@
 
 ## 1. Línea base de conteos
 
-- [ ] 1.1 Calcular el conteo de flores por etapa y de fotos por etapa desde `data/annotations/flowers.csv`, y definir el split por md5 con los recortes de una misma foto del mismo lado. Responsable posible: persona de datos A. Verificar: tabla por etapa y por lado del split que suma 178 flores y 56 fotos, sin ningún md5 en dos lados.
-- [ ] 1.2 Escribir un chequeo de fuga que falle si un md5 aparece en más de un lado del split. Responsable posible: persona de datos A. Verificar: el chequeo pasa sobre el split real y falla en un caso de prueba construido a propósito.
+- [x] 1.1 Calcular el conteo de flores por etapa y de fotos por etapa desde `data/annotations/flowers.csv`, y definir el split por md5 con los recortes de una misma foto del mismo lado. Responsable posible: persona de datos A. Verificar: tabla por etapa y por lado del split que suma 178 flores y 56 fotos, sin ningún md5 en dos lados.
+- [x] 1.2 Escribir un chequeo de fuga que falle si un md5 aparece en más de un lado del split. Responsable posible: persona de datos A. Verificar: el chequeo pasa sobre el split real y falla en un caso de prueba construido a propósito.
 
 ## 2. Aumentación solo en entrenamiento
 
-- [ ] 2.1 Definir la configuración de aumentación con los límites globales (rotación ±30°, zoom, brillo y contraste leves, sin cambios fuertes de tono) y aplicarla solo al lado de entrenamiento. Responsable posible: persona de datos A. Verificar: la configuración se ve en un solo lugar y una muestra de 20 recortes aumentados no muestra cambios de tono fuertes.
-- [ ] 2.2 Agregar la validación que rechaza cualquier derivado de validación o prueba en entrenamiento. Responsable posible: persona de datos B. Verificar: el chequeo pasa y falla con un caso de prueba construido a propósito.
+- [x] 2.1 Definir la configuración de aumentación con los límites globales (rotación ±30°, zoom, brillo y contraste leves, sin cambios fuertes de tono) y aplicarla solo al lado de entrenamiento. Responsable posible: persona de datos A. Verificar: la configuración se ve en un solo lugar y una muestra de 20 recortes aumentados no muestra cambios de tono fuertes.
+- [x] 2.2 Agregar la validación que rechaza cualquier derivado de validación o prueba en entrenamiento. Responsable posible: persona de datos B. Verificar: el chequeo pasa y falla con un caso de prueba construido a propósito.
 - [ ] 2.3 Generar el conjunto aumentado en `data/processed/` (o definirlo al vuelo) y reportar conteos antes y después por etapa. Responsable posible: persona de datos B. Verificar: los conteos reportados coinciden con los archivos generados y `git status -- data/raw` está vacío.
 - [ ] 2.4 Evidencia de la aumentación: reportar en el chat qué se probó, los conteos antes y después, y los límites (9 flores de sobreabierto siguen siendo 9 ejemplos reales). Responsable posible: persona de datos B. Verificar: mensaje en el chat con las tres partes.
 

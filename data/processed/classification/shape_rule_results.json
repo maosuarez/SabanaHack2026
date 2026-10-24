@@ -1,0 +1,143 @@
+{
+ "n_pool": 154,
+ "segmentacion_fallida_pool": 72,
+ "segmentacion_fallida_por_clase": {
+  "inmaduro": 67,
+  "optimo": 4,
+  "sobreabierto": 1
+ },
+ "stats_ratio_box": {
+  "inmaduro": {
+   "n": 114,
+   "media": 0.826,
+   "mediana": 0.814,
+   "min": 0.447,
+   "max": 1.29
+  },
+  "optimo": {
+   "n": 34,
+   "media": 0.898,
+   "mediana": 0.9,
+   "min": 0.575,
+   "max": 1.162
+  },
+  "sobreabierto": {
+   "n": 6,
+   "media": 1.073,
+   "mediana": 1.096,
+   "min": 0.931,
+   "max": 1.181
+  },
+  "AUC_sob_vs_optimo": 0.882,
+  "AUC_sob_vs_resto": 0.89
+ },
+ "stats_ratio_mask": {
+  "inmaduro": {
+   "n": 47,
+   "media": 0.863,
+   "mediana": 0.913,
+   "min": 0.299,
+   "max": 1.375
+  },
+  "optimo": {
+   "n": 30,
+   "media": 1.014,
+   "mediana": 1.041,
+   "min": 0.628,
+   "max": 1.222
+  },
+  "sobreabierto": {
+   "n": 5,
+   "media": 1.089,
+   "mediana": 1.035,
+   "min": 0.841,
+   "max": 1.429
+  },
+  "AUC_sob_vs_optimo": 0.567,
+  "AUC_sob_vs_resto": 0.675
+ },
+ "stats_ens": {
+  "inmaduro": {
+   "n": 47,
+   "media": 1.252,
+   "mediana": 1.236,
+   "min": 0.59,
+   "max": 3.122
+  },
+  "optimo": {
+   "n": 30,
+   "media": 1.215,
+   "mediana": 1.184,
+   "min": 0.676,
+   "max": 1.911
+  },
+  "sobreabierto": {
+   "n": 5,
+   "media": 1.35,
+   "mediana": 1.312,
+   "min": 0.985,
+   "max": 1.894
+  },
+  "AUC_sob_vs_optimo": 0.593,
+  "AUC_sob_vs_resto": 0.605
+ },
+ "cv_regla_ratio_box": {
+  "f1_cv_por_semilla": [
+   0.0,
+   0.0,
+   0.167
+  ],
+  "f1_media": 0.056,
+  "ic95_bootstrap": [
+   0.0,
+   0.0
+  ],
+  "n_sob": 5,
+  "tp_s0": 0,
+  "fp_s0": 8,
+  "n": 82
+ },
+ "umbrales_pool_ratio_box": {
+  "f1": 0.4,
+  "x_ratio": 1.05,
+  "y_ens": 0.9
+ },
+ "cv_regla_ratio_mask": {
+  "f1_cv_por_semilla": [
+   0.25,
+   0.0,
+   0.0
+  ],
+  "f1_media": 0.083,
+  "ic95_bootstrap": [
+   0.0,
+   0.667
+  ],
+  "n_sob": 5,
+  "tp_s0": 1,
+  "fp_s0": 2,
+  "n": 82
+ },
+ "umbrales_pool_ratio_mask": {
+  "f1": 0.5,
+  "x_ratio": 1.2,
+  "y_ens": 1.25
+ },
+ "cv_regla_solo_ratio_box_154": {
+  "f1_cv_por_semilla": [
+   0.24,
+   0.261,
+   0.273
+  ],
+  "f1_media": 0.258,
+  "ic95_bootstrap": [
+   0.0,
+   0.48
+  ],
+  "n_sob": 6,
+  "tp_s0": 3,
+  "fp_s0": 16,
+  "n": 154
+ },
+ "umbral_solo_ratio_box": 1.1
+}

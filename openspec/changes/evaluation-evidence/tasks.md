@@ -2,8 +2,8 @@
 
 ## 1. Split y reglas de evaluación
 
-- [ ] 1.1 Generar el split por md5 con recortes de una foto del mismo lado y guardarlo (semilla y md5 por lado) en `data/annotations/`. Responsable posible: modelo/datos. Verificar: ningún md5 en dos lados y conteo de flores por clase y lado.
-- [ ] 1.2 Marcar clases con menos de 5 ejemplos de prueba como no concluyentes. Responsable posible: modelo/datos. Verificar: el conteo por clase del test muestra la marca en sobreabierto si n < 5.
+- [x] 1.1 Generar el split por md5 con recortes de una foto del mismo lado y guardarlo (semilla y md5 por lado) en `data/annotations/`. Responsable posible: modelo/datos. Verificar: ningún md5 en dos lados y conteo de flores por clase y lado.
+- [x] 1.2 Marcar clases con menos de 5 ejemplos de prueba como no concluyentes. Responsable posible: modelo/datos. Verificar: el conteo por clase del test muestra la marca en sobreabierto si n < 5.
 
 ## 2. Métricas y piso
 
@@ -13,7 +13,7 @@
 ## 3. Plantilla de evidencia
 
 - [ ] 3.1 Fijar la plantilla de informe para el chat (qué se probó, resultado con tabla y matriz, límites) con la advertencia de anotación única sin acuerdo medido. Responsable posible: modelo/datos. Verificar: un informe de ejemplo sobre el piso cumple la plantilla.
-- [ ] 3.2 Aplicar la plantilla tras cada prototipo de las Specs 3 y 4. Responsable posible: quien entregue el prototipo. Verificar: mensaje en el chat con las tres partes antes de cerrar la tarea.
+- [x] 3.2 Aplicar la plantilla tras cada prototipo de las Specs 3 y 4. Responsable posible: quien entregue el prototipo. Verificar: mensaje en el chat con las tres partes antes de cerrar la tarea.
 
 ## 4. Casos desconocidos
 

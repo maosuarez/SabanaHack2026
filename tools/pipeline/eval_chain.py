@@ -1,4 +1,4 @@
-"""Evalúa la cadena completa en test: RT-DETR (cajas guardadas) -> recorte -> DINOv2-S + kNN."""
+"""Cadena completa en test: RT-DETR final (thr 0,152) en vivo -> recorte -> DINOv2-S + LogReg (joblib) -> veredicto."""
 
 from __future__ import annotations
 
@@ -10,22 +10,21 @@ from typing import Any
 
 import numpy as np
 import torch
-from PIL import Image, ImageDraw
-from sklearn.neighbors import KNeighborsClassifier
-from transformers import AutoModel
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools/detection"))
 sys.path.insert(0, str(ROOT / "tools/classification"))
 from common import Box, md5_to_file
-from embed_train import BASE, CLASSES, EMB, embed
+from embed_train import BASE, CLASSES, embed
 from evaluate import iou
+sys.path.insert(0, str(ROOT / "tools/pipeline"))
+from predict import Pipeline  # noqa: E402
 
 DET = ROOT / "data/processed/detection"
 CLS = ROOT / "data/processed/classification"
 OUT = ROOT / "data/processed/pipeline"
 MARGIN = 0.10  # igual que make_crops.py
-K = 7
 NONE, FALSE = 3, 3  # índice de fila "no detectada" / columna "caja falsa"
 
 
@@ -50,7 +49,6 @@ def acc_bal(y: list[int], p: list[int]) -> tuple[float, float]:
 
 def main() -> None:
     torch.set_num_threads(4)
-    thr = json.loads((DET / "thresholds.json").read_text())["rtdetr"]["threshold"]
     test = json.loads((DET / "split.json").read_text())["test"]
     files = md5_to_file()
     # verdad: solo anotables, mismo orden que el manifest de test
@@ -65,38 +63,21 @@ def main() -> None:
                 ((x, y, x + w, y + h), CLASSES.index(r["stage"]), int(r["image_id"]))
             )
     assert sum(len(v) for v in gt.values()) == len(man) == 24
-    # kNN solo con train (+train_aug), como en embed_train.py
-    ytr = np.array(
-        [
-            CLASSES.index(r["stage"])
-            for r in csv.DictReader((CLS / "manifest.csv").open())
-            if r["split"] == "train"
-        ]
-    )
-    xtr = np.concatenate(
-        [np.load(EMB / "vit_s14_train.npy"), np.load(EMB / "vit_s14_train_aug.npy")]
-    )
-    yall = np.concatenate([ytr, np.tile(ytr, len(xtr) // len(ytr) - 1)])
-    assert len(yall) == len(xtr)
-    knn = KNeighborsClassifier(K, metric="cosine", weights="distance").fit(xtr, yall)
-    # cota superior: cajas verdaderas (embeddings ya calculados, orden del manifest)
+    pipe = Pipeline()
+    thr, clf = pipe.thr, pipe.clf
+    # cota superior: cajas verdaderas (recortes guardados del manifest de test)
     ytest = np.array([CLASSES.index(r["stage"]) for r in man])
-    pt = knn.predict_proba(np.load(EMB / "vit_s14_test.npy"))
-    ub_pred = pt.argmax(1)
+    crops_gt = [Image.open(ROOT / "outputs/classification/crops" / r["crop"]).convert("RGB") for r in man]
+    ub_pred = clf.predict_proba(embed(pipe.dino, crops_gt, BASE)).argmax(1)
     ub = acc_bal(ytest.tolist(), ub_pred.tolist())
-    # cajas predichas con score >= umbral
-    preds = json.loads((DET / "preds_rtdetr_test.json").read_text())["predictions"]
+    imgs = {m: Image.open(files[m]).convert("RGB") for m in test}
     sel: list[dict[str, Any]] = []
     for m in test:
-        for d in preds.get(m, []):
-            if d["score"] >= thr:
-                sel.append({"md5": m, "box": tuple(d["box"]), "score": d["score"]})
-    model = AutoModel.from_pretrained("facebook/dinov2-small").eval()
-    imgs = {m: Image.open(files[m]).convert("RGB") for m in test}
-    crops = [crop_box(imgs[s["md5"]], s["box"]) for s in sel]
-    pr = knn.predict_proba(embed(model, crops, BASE))
-    for s, p in zip(sel, pr, strict=True):
-        s["pred"], s["conf"] = int(p.argmax()), float(p.max())
+        fl, _ = pipe.run(imgs[m])
+        for f in fl:
+            p = np.array([f["probabilidades"][c] for c in CLASSES])
+            sel.append({"md5": m, "box": tuple(f["caja_norm"]), "score": f["score_detector"],
+                        "pred": int(p.argmax()), "conf": float(p.max()), "dec": f["veredicto_clave"]})
     # emparejamiento voraz por score (como evaluate.match_image)
     for s in sel:
         s["gt"] = None
@@ -189,15 +170,31 @@ def main() -> None:
                 "exactitud": float(ok[keep].mean()) if keep.any() else None,
             }
         )
+    ver = {"matched": 0, "apto": 0, "apto_correcto": 0, "apto_colados": [], "gris": 0, "gris_optimo": 0,
+           "no_apto": 0, "no_apto_optimo": 0, "opt_total": 0}
+    for s_ in sel:
+        if s_["gt"] is None:
+            continue
+        y = gt[s_["md5"]][s_["gt"]][1]
+        ver["matched"] += 1
+        ver["opt_total"] += y == 1
+        k = s_["dec"]
+        ver[k] += 1
+        if k == "apto":
+            ver["apto_correcto"] += y == 1
+            if y != 1:
+                ver["apto_colados"].append(CLASSES[y])
+        elif y == 1:
+            ver["gris_optimo" if k == "gris" else "no_apto_optimo"] += 1
     res = {
+        "veredicto_sobre_detectadas": ver,
         "umbral_detector": thr,
-        "k": K,
         "n_cajas_pred": len(sel),
         "n_matched": len(matched_rows),
         "n_gt": n_gt,
         "n_falsas": int(cm[FALSE].sum()),
         "det_recall": det_recall,
-        "knn_train": f"train({len(ytr)} recortes) + train_aug({len(xtr) - len(ytr)})",
+        "clasificador": "DINOv2-S/14 + LogReg C=10 + 24 copias sobreabierto (joblib)",
         "etapa_sobre_detectadas": {
             "acc": acc_det,
             "bal_acc": bal_det,
@@ -233,35 +230,8 @@ def main() -> None:
         ],
     }
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "chain_test.json").write_text(json.dumps(res, indent=1))
+    (OUT / "chain_test_final.json").write_text(json.dumps(res, indent=1))
     print(json.dumps({k: v for k, v in res.items() if k != "cajas"}, indent=1))
-    # dibujo en scratchpad (fuera del repo)
-    sc = Path(
-        "/tmp/claude-1000/-home-maosuarez-sabana-hack-2026/577a49ce-28e5-4413-8be9-b1d6f0e3ab53/scratchpad"
-    )
-    col = {"inmaduro": "lime", "optimo": "yellow", "sobreabierto": "red"}
-    for m in test:
-        im = imgs[m].copy()
-        W, H = im.size
-        d = ImageDraw.Draw(im)
-        lw = max(2, W // 400)
-        for gb, _, _ in gt[m]:
-            d.rectangle(
-                [gb[0] * W, gb[1] * H, gb[2] * W, gb[3] * H], outline="white", width=1
-            )
-        for c in res["cajas"]:
-            if c["md5"] != m:
-                continue
-            b = c["box"]
-            tag = c["pred"][:3] + f" {c['conf']:.2f}" + ("" if c["gt_stage"] else " FP")
-            d.rectangle(
-                [b[0] * W, b[1] * H, b[2] * W, b[3] * H],
-                outline=col[c["pred"]],
-                width=lw,
-            )
-            d.text((b[0] * W, max(0, b[1] * H - 12)), tag, fill=col[c["pred"]])
-        im.thumbnail((1000, 1000))
-        im.save(sc / f"{m[:8]}.png")
 
 
 if __name__ == "__main__":
