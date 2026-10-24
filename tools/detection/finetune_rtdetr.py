@@ -196,6 +196,8 @@ def main() -> None:
         "--val-frac", type=float, default=0.2, help="fracción de train para validar"
     )
     ap.add_argument("--seed", type=int, default=2026)
+    ap.add_argument("--init-checkpoint", type=Path, default=None)
+    ap.add_argument("--start-epoch", type=int, default=0, help="solo etiqueta el log")
     ap.add_argument("--smoke", action="store_true", help="1 paso en CPU con 2 imágenes")
     args = ap.parse_args()
 
@@ -225,13 +227,19 @@ def main() -> None:
         flush=True,
     )
 
-    model = RTDetrForObjectDetection.from_pretrained(
-        MODEL_ID,
-        num_labels=1,
-        id2label={0: "rose"},
-        label2id={"rose": 0},
-        ignore_mismatched_sizes=True,
-    ).to(device)
+    if args.init_checkpoint and args.init_checkpoint.exists():
+        print(f"init desde {args.init_checkpoint}", flush=True)
+        model = RTDetrForObjectDetection.from_pretrained(args.init_checkpoint).to(
+            device
+        )
+    else:
+        model = RTDetrForObjectDetection.from_pretrained(
+            MODEL_ID,
+            num_labels=1,
+            id2label={0: "rose"},
+            label2id={"rose": 0},
+            ignore_mismatched_sizes=True,
+        ).to(device)
     backbone = [p for n, p in model.named_parameters() if "backbone" in n]
     rest = [p for n, p in model.named_parameters() if "backbone" not in n]
     opt = torch.optim.AdamW(
@@ -278,7 +286,7 @@ def main() -> None:
                 with torch.autocast(device.type, dtype=torch.float16, enabled=use_amp):
                     vl += float(model(pixel_values=x, labels=lab).loss)
                 vn += 1
-        rec = {"epoch": ep, "train_loss": tl / nb, "val_loss": vl / vn}
+        rec = {"epoch": ep + args.start_epoch,"train_loss": tl / nb, "val_loss": vl / vn}
         history.append(rec)
         print(rec, flush=True)
         if rec["val_loss"] < best:
